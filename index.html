@@ -60,40 +60,46 @@
         
         <section class="navigation-block">
             <h2 class="visually-hidden">навигационный блок</h2> 
-            <div class="category-materials">
-                <span>new</span>
-                <h2>Материалы</h2>
-                <img src="img/icon-1.svg" alt="Материалы" width="44" height="65" />
-                <a href="">На любой вкус</a>
+            <div class="navigation-block-head">
+                <div class="category-materials">
+                    <span>new</span>
+                    <h2>Материалы</h2>
+                    <img src="img/icon-1.svg" alt="Материалы" width="44" height="65" />
+                    <a href="">На любой вкус</a>
+                </div> 
+                <div class="category-tools">
+                    <h2>Инструмент</h2>
+                    <img src="img/icon-2.svg" alt="Инструмент" width="75" height="61" />
+                    <a href="">На все случаи</a>
+                </div> 
+                <div class="category-technic">
+                    <h2>Техинка</h2>
+                    <img src="img/icon-3.svg" alt="Техинка" width="78" height="62" />
+                    <a href="">Для стройки</a>
+                </div> 
             </div> 
-            <div class="category-tools">
-                <h2>Инструмент</h2>
-                <img src="img/icon-2.svg" alt="Инструмент" width="75" height="61" />
-                <a href="">На все случаи</a>
-            </div> 
-            <div class="category-technic">
-                <h2>Техинка</h2>
-                <img src="img/icon-3.svg" alt="Техинка" width="78" height="62" />
-                <a href="">Для стройки</a>
-            </div> 
-            <div class="sliders">
-                <!-- Слайдер -->
-                <div>
-                    <h2>Дрели</h2>
-                    <span>Соседям на радость</span>
+            <div class="navigation-block-foot">
+                <div class="sliders">
+                    <!-- Слайдер -->
+                    <div>
+                        <h2>Дрели</h2>
+                        <span>Соседям на радость</span>
+                    </div>
+                    <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
+                    <a href="catalog.html">Открыть каталог</a>
+                </div> 
+                <div class="right">
+                    <div class="category-discount">
+                        <h2>Скидки 50%</h2>
+                        <img src="img/icon-4.svg" alt="Скидки" width="59" height="72" />
+                        <a href="">На 350 товаров</a>
+                    </div> 
+                    <div class="page-delivery">
+                        <h2>Доставка</h2>
+                        <img src="img/icon-5.svg" alt="Доставка" width="78" height="63" />
+                        <a href="">Бесплатно</a>
+                    </div>
                 </div>
-                <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
-                <a href="catalog.html">Открыть каталог</a>
-            </div> 
-            <div class="category-discount">
-                <h2>Скидки 50%</h2>
-                <img src="img/icon-4.svg" alt="Скидки" width="59" height="72" />
-                <a href="">На 350 товаров</a>
-            </div> 
-            <div class="page-delivery">
-                <h2>Доставка</h2>
-                <img src="img/icon-5.svg" alt="Доставка" width="78" height="63" />
-                <a href="">Бесплатно</a>
             </div>
         </section>
         
@@ -251,12 +257,27 @@
                 <button class="tab">Кредит</button>
             </div>
             <div class="tab-view">
-                <div class="tab-view-delivery">
+                <div class="tab-view-delivery current">
                     <h3>Доставка</h3>
                     <p>Мы с удовольствием доставим ваш товар прямо<br>
                     к вашему подъезду совершенно бесплатно!<br>
                     Ведь мы неплохо заработаем,<br>
                     поднимая его на ваш этаж!</p>
+                    <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />
+                </div>
+                <div class="tab-view-guarantee current">
+                    <h3>Гарантия</h3>
+                    <p>Если купленный у нас товар поломается или заискрит, <br>
+                    а также в случае пожара, спровоцированного его возгоранием, <br> 
+                    вы всегда можете быть уверены в нашей гарантии. Мы обменяем <br>
+                    сгоревший товар на новый. <br>
+                    Дом уж восстановите как-нибудь сами.</p>
+                    <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />
+                </div>
+                <div class="tab-view-credit current">
+                    <h3>Кредит</h3>
+                    <p>Залезть в долговую яму стало проще!<br>
+                    Кредитные консультанты придут вам на помощь.</p>
                     <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />
                 </div>
             </div>
@@ -278,8 +299,10 @@
             <h2>Контакты</h2> 
             <p>Вы можете забрать товар сами, 
             заехав в наш офис:</p>
-            <img src="img/map.png" alt="Карта" width="300" height="158" />
-            <button class="">Заблудились? НапиШИТЕ НАМ!</button>
+            <a href="" class="big-map">
+                <img src="img/map.png" alt="Карта" width="300" height="158" />
+            </a>
+            <button class="write-us">Заблудились? НапиШИТЕ НАМ!</button>
         </section>
     </main>
     <footer class="main-footer">
@@ -340,6 +363,7 @@
             
         </section>
     </footer>
+    
     <section class="modal modal-login">
         <h2>Личный кабинет</h2>
         <p>Введите свой логин и пароль</p>
@@ -348,9 +372,34 @@
             <img src="img/form-2.svg" alt="ok" width="21" height="21">
         </span>
     </section>
+    
     <section class="modal modal-write-us">
         <h2 class="visually-hiden">Напишите нам</h2>
-        <!-- Зесь будет форма напишите нам-->
+        <form action="">
+            <div class="half-width">
+                <label for="name-field">Ваше имя:</label><br>
+                <input type="text" name="name" id="name-field">
+            </div>
+            
+            <div class="half-width">
+                <label for="email-field">Ваш e-mail:</label><br>
+                <input type="email" name="email" id="email-field">
+            </div>
+            
+            <label for="comment-field">Текст письма:</label><br>
+            <textarea name="field" id="comment-field" cols="30" rows="10">В свободной форме
+            </textarea>
+            
+            <input type="submit" value="Отправить">
+        </form>
+        <span class="modal-close">
+            <img src="img/form-2.svg" alt="ok" width="21" height="21">
+        </span>
+    </section>
+    
+    <section class="modal modal-map">
+        <h2 class="visually-hiden">Адрес проезда</h2>
+        <img src="img/map_full.png" alt="Большая Конюшенная ул., 19" width="940" height="446">
         <span class="modal-close">
             <img src="img/form-2.svg" alt="ok" width="21" height="21">
         </span>

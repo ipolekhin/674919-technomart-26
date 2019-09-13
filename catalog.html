@@ -83,7 +83,22 @@
                 <!-- Форма фильтров слева -->
                 <form action="" method="get" oninput='priceoutput_min.value=price.value'>
                     <label>Цена:</label>
-                    <input type="range" id="price" name="price" min="0" max="30000" step="100"/>
+                    <div>
+                        <div class="price_range">
+                            <div class="price_range-min">
+                                <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">
+                            </div>
+                            <div class="price_range_selected"></div>
+                            <div class="price_range-max">
+                                <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">
+                            </div>
+                        </div>
+                        <div>
+                            <input type="text" id="price_min" name="price_min"/> -
+                            <input type="text" id="price_max" name="price_max"/>
+                        </div>
+                    </div>
+                    
                     <output name='priceoutput_min'>0</output>
                     
                     <fieldlist>
