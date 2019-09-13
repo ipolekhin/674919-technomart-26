@@ -79,15 +79,71 @@
         
         <aside>
             <section class="filters">                   
-                <h3 class="visually-hidden">Фильтр:</h2>
+                <h4 class="visually-hidden">Фильтр:</h4>
                 <!-- Форма фильтров слева -->
+                <form action="" method="get" oninput='priceoutput_min.value=price.value'>
+                    <label>Цена:</label>
+                    <input type="range" id="price" name="price" min="0" max="30000" step="100"/>
+                    <output name='priceoutput_min'>0</output>
+                    
+                    <fieldlist>
+                        <legend>Производители:</legend>
+                        <label>
+                            <input type="checkbox" name="brand-id" checked> Bosch
+                        </label>
+                        <label>
+                            <input type="checkbox" name="brand-id"> Интерскол
+                        </label>
+                        <label>
+                            <input type="checkbox" name="brand-id" checked> Makita
+                        </label>
+                        <label>
+                            <input type="checkbox" name="brand-id"> DeWalt
+                        </label>
+                        <label>
+                            <input type="checkbox" name="brand-id"> Hitachi
+                        </label> 
+                    </fieldlist>
+                    
+                    <fieldlist>
+                        <legend>Питание:</legend>
+                        <label>
+                            <input type="radio" name="power-id" checked> Аккумуляторные
+                        </label>
+                        <label>
+                            <input type="radio" name="power-id"> Сетевые
+                        </label> 
+                    </fieldlist>
+                    
+                    <input type="submit" value="Показать">                    
+                </form>
             </section>
         </aside> 
         
         <div class="container-right">
             <section class="filters">                   
-                <h3 class="visually-hidden">Сортировка:</h2>
-                <!-- Сортировка -->
+                <h4 class="visually-hidden">Сортировка:</h4>
+                <ul class="catalog-sort">
+                    <li class="sort-price">
+                        <a href="">По цене</a>
+                    </li>
+                    <li class="sort-type">
+                        <a href="">По типу</a>
+                    </li>
+                    <li class="sort-function">
+                        <a href="">По функционалу</a>
+                    </li>
+                    <li class="sort-up-dir">
+                        <a href="">
+                            <img src="img/icon-up-dir.svg" alt="Выход" width="11" height="10">
+                        </a>
+                    </li>
+                    <li class="sort-down-dir">
+                        <a href="">
+                            <img src="img/icon-down-dir.svg" alt="Выход" width="11" height="10">
+                        </a>
+                    </li>
+                </ul>
             </section>
 
             <section class="catalog">
@@ -305,8 +361,23 @@
                         </p>
                     </li>
                 </ul>
+                
+                <ul class="pagination">
+                    <li><a class="current">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">Следующая</a></li>
+                </ul>
             </section>
         </div>
+        
+        <section class="catalog-description">
+            <h2>Пара слов о перфораторах</h2>
+            <p>
+                Перфоратор — универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.<br>
+                Существуют электромеханические и пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. В ассортиментном ряду есть выбор «трехрежимников»: в одном устройстве будут совмещены отбойный молоток и ударная дрель.
+            </p>
+        </section>
     </main>
     <footer class="main-footer">
         <div>
