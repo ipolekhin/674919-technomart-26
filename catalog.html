@@ -9,9 +9,13 @@
         <section class="header-top">
             <a href="index.html">
                 <!-- Так как стили пока не подключаем во всех svg которые имеют белый цвет через редактор временно поставил цвет черный -->
-                <img src="img/logo.svg" alt="Логотип интернет-магазина «Техномарт»" width="109" height="19" /></a> 
-            
-            <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> Поиск: <!-- Здесь будет форма поиска --> 
+                <img src="img/logo.svg" alt="Логотип интернет-магазина «Техномарт»" width="109" height="19" />
+            </a> 
+
+            <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
+                <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> 
+                <input class="button search-button" type="text" name="search" placeholder="Поиск:">
+            </form>
             
             <a href=""><img src="img/icon-bookmark.svg" alt="Закладки" width="14" height="16" />Закладки: 0</a>
             
@@ -30,7 +34,7 @@
             <div class="header-middle-contacts">
                 <div class="contacts-phone">
                     <img src="img/icon-phone.svg" alt="Телефон" width="19" height="19" />
-                    <p>+7 (812) 555-05-55</p>
+                    <a href="tel:+7 (812) 555-05-55">+7 (812) 555-05-55</a>
                 </div>
                 <div class="contacts-adress">
                     <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
@@ -83,11 +87,11 @@
         
         <h1>Перфораторы</h1>
         
-        <aside>
+        <aside class="container-left">
             <section class="filters">                   
-                <h4 class="visually-hidden">Фильтр:</h4>
+                <h4>Фильтр:</h4>
                 <!-- Форма фильтров слева -->
-                <form action="" method="get" oninput='priceoutput_min.value=price.value'>
+                <form action="https://echo.htmlacademy.ru" method="get" oninput="priceoutput_min.value=price.value" class="filters-form">
                     <label>Цена:</label>
                     <div>
                         <div class="price_range">
@@ -109,41 +113,53 @@
                     
                     <fieldlist>
                         <legend>Производители:</legend>
-                        <label>
-                            <img src="img/checkbox-on.svg" alt="checkbox" width="27" height="23">
-                            <input type="checkbox" name="brand-id" checked> Bosch
-                        </label>
-                        <label>
-                            <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
-                            <input type="checkbox" name="brand-id"> Интерскол
-                        </label>
-                        <label>
-                            <img src="img/checkbox-on.svg" alt="checkbox" width="27" height="23">
-                            <input type="checkbox" name="brand-id" checked> Makita
-                        </label>
-                        <label>
-                            <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
-                            <input type="checkbox" name="brand-id"> DeWalt
-                        </label>
-                        <label>
-                            <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
-                            <input type="checkbox" name="brand-id"> Hitachi
-                        </label> 
+                        <ul>
+                            <li class="filter-option">
+                                <label>
+                                    <img src="img/checkbox-on.svg" alt="checkbox" width="27" height="23">
+                                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id" checked> Bosch
+                                </label>
+                            </li>
+                            <li class="filter-option">
+                                <label>
+                                    <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
+                                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id"> Интерскол
+                                </label>
+                            </li>
+                            <li class="filter-option">
+                                <label>
+                                    <img src="img/checkbox-on.svg" alt="checkbox" width="27" height="23">
+                                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id" checked> Makita
+                                </label>
+                            </li>
+                            <li class="filter-option">
+                                <label>
+                                    <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
+                                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id"> DeWalt
+                                </label>
+                            </li>
+                            <li class="filter-option">
+                                <label>
+                                    <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
+                                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id"> Hitachi
+                                </label> 
+                            </li>
+                        </ul>
                     </fieldlist>
                     
                     <fieldlist>
                         <legend>Питание:</legend>
                         <label>
                             <img src="img/radio-on.svg" alt="radio" width="25" height="25">
-                            <input type="radio" name="power-id" checked> Аккумуляторные
+                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power-id" checked> Аккумуляторные
                         </label>
                         <label>
                             <img src="img/radio-off.svg" alt="radio" width="25" height="25">
-                            <input type="radio" name="power-id"> Сетевые
+                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power-id"> Сетевые
                         </label> 
                     </fieldlist>
                     
-                    <input type="submit" value="Показать">                    
+                    <input class="button filter-button" type="submit" value="Показать">                    
                 </form>
             </section>
         </aside> 
@@ -465,14 +481,17 @@
             
         </section>
     </footer>
-    <section class="modal modal-login">
+    
+     <!-- Если пользователь авторизирован, нужно ли форму авторизации оставлять в разметке? -->
+    <!--section class="modal modal-login">
         <h2>Личный кабинет</h2>
         <p>Введите свой логин и пароль</p>
-        <!-- Форма -->
+       
         <span class="modal-close">
             <img src="img/form-2.svg" alt="ok" width="21" height="21">
         </span>
-    </section>
+    </section-->
+    
     <section class="modal modal-cart">
         <span>
             <img src="img/form-1.svg" alt="ok" width="66" height="66">Товар добавлен в корзину!
@@ -481,10 +500,9 @@
             <a href="">Оформить заказ</a>
             <a href="">Продолжить покупки</a>
         </div>
-        <!-- Зесь будет форма напишите нам-->
-        <span class="modal-close">
-            <img src="img/form-2.svg" alt="ok" width="21" height="21">
-        </span>
+        <button class="modal-close" type="button">
+            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        </button>
     </section>
   </body>
 </html>

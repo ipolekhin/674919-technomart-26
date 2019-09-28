@@ -9,9 +9,13 @@
         <section class="header-top">
             <a href="index.html">
                 <!-- Так как стили пока не подключаем во всех svg которые имеют белый цвет через редактор временно поставил цвет черный -->
-                <img src="img/logo.svg" alt="Логотип интернет-магазина «Техномарт»" width="109" height="19" /></a> 
+                <img src="img/logo.svg" alt="Логотип интернет-магазина «Техномарт»" width="109" height="19" />
+            </a> 
             
-            <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> Поиск: <!-- Здесь будет форма поиска --> 
+            <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
+                <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> 
+                <input class="button search-button" type="text" name="search" placeholder="Поиск:">
+            </form>
             
             <a href=""><img src="img/icon-bookmark.svg" alt="Закладки" width="14" height="16" />Закладки: 0</a>
             
@@ -30,7 +34,7 @@
             <div class="header-middle-contacts">
                 <div class="contacts-phone">
                     <img src="img/icon-phone.svg" alt="Телефон" width="19" height="19" />
-                    <p>+7 (812) 555-05-55</p>
+                    <a href="tel:+7 (812) 555-05-55">+7 (812) 555-05-55</a>
                 </div>
                 <div class="contacts-adress">
                     <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
@@ -43,7 +47,9 @@
                         <img src="img/icon-login.svg" alt="Вход" width="20" height="17">Вход
                     </a>
                 </li>
-                <li class="login-registration"><a href="">Регистрация</a></li>
+                <li class="login-registration">
+                    <a href="">Регистрация</a>
+                </li>
             </ul>
         </section>
         
@@ -85,12 +91,22 @@
             <div class="navigation-block-foot">
                 <div class="sliders">
                     <!-- Слайдер -->
-                    <div>
-                        <h2>Дрели</h2>
-                        <span>Соседям на радость</span>
+                    <div class="sliders_item">
+                        <div>
+                            <h2>Дрели</h2>
+                            <span>Соседям на радость</span>
+                        </div>
+                        <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
+                        <a href="catalog.html">Открыть каталог</a>
                     </div>
-                    <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
-                    <a href="catalog.html">Открыть каталог</a>
+                    <div class="sliders_item">
+                        <div>
+                            <h2>Перфораторы</h2>
+                            <span>Настоящие мужские игрушки</span>
+                        </div>
+                        <img src="img/slide_perforators.jpg" alt="Дрели" width="620" height="266" />
+                        <a href="catalog.html">Открыть каталог</a>
+                    </div>
                 </div> 
                 <div class="right">
                     <div class="category-discount">
@@ -256,9 +272,9 @@
             Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
             
             <div class="tabs">
-                <button class="tab current">Доставка</button>
-                <button class="tab">Гарантия</button>
-                <button class="tab">Кредит</button>
+                <button class="tab current" type="button">Доставка</button>
+                <button class="tab" type="button">Гарантия</button>
+                <button class="tab" type="button">Кредит</button>
             </div>
             <div class="tab-view">
                 <div class="tab-view-delivery current">
@@ -306,7 +322,7 @@
             <a href="" class="big-map">
                 <img src="img/map.png" alt="Карта" width="300" height="158" />
             </a>
-            <button class="write-us">Заблудились? НапиШИТЕ НАМ!</button>
+            <button class="write-us" type="button">Заблудились? НапиШИТЕ НАМ!</button>
         </section>
     </main>
     <footer class="main-footer">
@@ -369,44 +385,65 @@
     </footer>
     
     <section class="modal modal-login">
-        <h2>Личный кабинет</h2>
-        <p>Введите свой логин и пароль</p>
-        <!-- Форма -->
-        <span class="modal-close">
-            <img src="img/form-2.svg" alt="ok" width="21" height="21">
+        <h2>Вход на сайт</h2>
+        <form action="" method="post" class="login-form">
+            <label for="login-field">Логин</label>
+            <input type="text" name="login" id="login-field"  placeholder="Логин">
+            <label for="password-field">Пароль</label>
+            <input type="password" name="password" id="password-field"  placeholder="Пароль">
+            <label for="remember-field">Запомнить меня</label>
+            <input type="checkbox" name="remember" id="remember-field">
+            <a href="" class="restore">Забыл пароль!</a>
+            <input class="button login-button" type="submit" value="Войти">
+        </form>
+        <p>Еще не с нами? <a href="">Зарегистрируйтесь!</a></p>
+        <button class="modal-close" type="button">
+            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        </button>
+    </section>
+    
+    <section class="modal modal-cart">
+        <span>
+            <img src="img/form-1.svg" alt="ok" width="66" height="66">Товар добавлен в корзину!
         </span>
+        <div>
+            <a href="">Оформить заказ</a>
+            <a href="">Продолжить покупки</a>
+        </div>
+        <button class="modal-close" type="button">
+            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        </button>
     </section>
     
     <section class="modal modal-write-us">
         <h2 class="visually-hiden">Напишите нам</h2>
-        <form action="">
+        <form action="https://echo.htmlacademy.ru" method="post" class="write-us-form">
             <div class="half-width">
                 <label for="name-field">Ваше имя:</label><br>
-                <input type="text" name="name" id="name-field">
+                <input type="text" name="name" id="name-field" placeholder="Имя Фамилия">
             </div>
             
             <div class="half-width">
                 <label for="email-field">Ваш e-mail:</label><br>
-                <input type="email" name="email" id="email-field">
+                <input type="email" name="email" id="email-field" placeholder="email@example.com">
             </div>
             
             <label for="comment-field">Текст письма:</label><br>
-            <textarea name="field" id="comment-field" cols="30" rows="10">В свободной форме
-            </textarea>
+            <textarea name="field" id="comment-field" cols="30" rows="10" placeholder="В свободной форме"></textarea>
             
-            <input type="submit" value="Отправить">
+            <input class="button write-us-button" type="submit" value="Отправить">
         </form>
-        <span class="modal-close">
-            <img src="img/form-2.svg" alt="ok" width="21" height="21">
-        </span>
+        <button class="modal-close">
+            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        </button>
     </section>
     
     <section class="modal modal-map">
         <h2 class="visually-hiden">Адрес проезда</h2>
         <img src="img/map_full.png" alt="Большая Конюшенная ул., 19" width="940" height="446">
-        <span class="modal-close">
-            <img src="img/form-2.svg" alt="ok" width="21" height="21">
-        </span>
+        <button class="modal-close">
+            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        </button>
     </section>
   </body>
 </html>
