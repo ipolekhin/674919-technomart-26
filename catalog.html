@@ -75,11 +75,11 @@
         <ul class="breadcrumbs">
             <li><a href="index.html"><img src="img/icon-home.svg" alt="Главная" width="14" height="12"></a></li>
             <li>
-                <img src="img/icon-right-small.svg" alt="Главная" width="14" height="12">
+                <img src="img/icon-right-small.svg" alt="" width="14" height="12">
                 <a href="catalog.html">Каталог</a>
             </li>
             <li class="breadcrumbs-current">
-                <img src="img/icon-right-small.svg" alt="Главная" width="14" height="12">
+                <img src="img/icon-right-small.svg" alt="" width="14" height="12">
                 Перфораторы
             </li>
         </ul>
@@ -446,15 +446,23 @@
         </section>
     </footer>
     
-     <!-- Если пользователь авторизирован, нужно ли форму авторизации оставлять в разметке? -->
-    <!--section class="modal modal-login">
-        <h2>Личный кабинет</h2>
-        <p>Введите свой логин и пароль</p>
-       
-        <span class="modal-close">
-            <img src="img/form-2.svg" alt="ok" width="21" height="21">
-        </span>
-    </section-->
+    <section class="modal modal-login">
+        <h2>Вход на сайт</h2>
+        <form action="" method="post" class="login-form">
+            <label for="login-field">Логин</label>
+            <input type="text" name="login" id="login-field"  placeholder="Логин">
+            <label for="password-field">Пароль</label>
+            <input type="password" name="password" id="password-field"  placeholder="Пароль">
+            <label for="remember-field">Запомнить меня</label>
+            <input type="checkbox" name="remember" id="remember-field">
+            <a href="" class="restore">Забыл пароль!</a>
+            <input class="button login-button" type="submit" value="Войти">
+        </form>
+        <p>Еще не с нами? <a href="">Зарегистрируйтесь!</a></p>
+        <button class="modal-close" type="button">
+            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        </button>
+    </section>
     
     <section class="modal modal-cart">
         <span>
