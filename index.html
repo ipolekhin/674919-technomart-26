@@ -11,7 +11,6 @@
     <header class="main-header">
         <section class="header-top">
             <a class="logo" href="index.html">
-                <!-- Так как стили пока не подключаем во всех svg которые имеют белый цвет через редактор временно поставил цвет черный -->
                 <img src="img/logo.svg" alt="Логотип интернет-магазина «Техномарт»" width="109" height="19" />
             </a> 
             <div class="search">
@@ -86,7 +85,7 @@
             <h2 class="visually-hidden">навигационный блок</h2> 
             <div class="navigation-block-head">
                 <div class="category-materials">
-                    <span>new</span>
+                    <span class="new">new</span>
                     <h2>Материалы</h2>
                     <img src="img/icon-1.svg" alt="Материалы" width="44" height="65" />
                     <a href="">На любой вкус</a>
@@ -144,14 +143,14 @@
             </div>
             <ul class="catalog-list">
                 <li class="catalog-item">
+                    <div class="action visually-hidden">
+                        <a class="button" href="#">
+                            <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                        </a>
+                        <a class="button" href="#">В закладки</a>    
+                    </div>
                     <div class="catalog-item-images">
                         <img src="img/perforator_4.jpg" alt="Перфоратор BOSCH BFG 9000" width="218" height="170">
-                        <div class="visually-hidden">
-                            <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
-                            </a>
-                            <a class="button" href="#">В закладки</a>    
-                        </div>
                     </div>
 
                     <h3>
@@ -166,14 +165,14 @@
                     </p>
                 </li>
                 <li class="catalog-item">
+                    <div class="action visually-hidden">
+                        <a class="button" href="#">
+                            <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                        </a>
+                        <a class="button" href="#">В закладки</a>    
+                    </div>
                     <div class="catalog-item-images">
                         <img src="img/perforator_1.jpg" alt="Перфоратор BOSCH BFG 3000" width="218" height="170">
-                        <div class="visually-hidden">
-                            <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
-                            </a>
-                            <a class="button" href="#">В закладки</a>    
-                        </div>
                     </div>
 
                     <h3>
@@ -188,14 +187,14 @@
                     </p>
                 </li>
                 <li class="catalog-item">
+                    <div class="action visually-hidden">
+                        <a class="button" href="#">
+                            <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                        </a>
+                        <a class="button" href="#">В закладки</a>    
+                    </div>
                     <div class="catalog-item-images">
                         <img src="img/perforator_2.jpg" alt="Перфоратор BOSCH BFG 6000" width="218" height="170">
-                        <div class="visually-hidden">
-                            <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
-                            </a>
-                            <a class="button" href="#">В закладки</a>    
-                        </div>
                     </div>
 
                     <h3>
@@ -211,14 +210,14 @@
                 </li>
                 <li class="catalog-item">
                     <span class="catalog-item-new">new</span>
+                    <div class="action visually-hidden">
+                        <a class="button" href="#">
+                            <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                        </a>
+                        <a class="button" href="#">В закладки</a>    
+                    </div>
                     <div class="catalog-item-image on-focus">
-                        <img class="on-focus visually-hidden" src="img/perforator_3.jpg" alt="Перфоратор BOSCH BFG 2000" width="218" height="170">
-                        <div class="visually-hidden">
-                            <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
-                            </a>
-                            <a class="button" href="#">В закладки</a>    
-                        </div>
+                        <img class="on-focus visually-hidden" src="img/perforator_3.jpg" alt="Перфоратор BOSCH BFG 2000" width="218" height="170">X
                     </div>
 
                     <h3>
@@ -391,34 +390,16 @@
                 </li>
             </ul>
             <p class="footer-callback">
-                <b>Обратная свзяь:</b>
+                <span>Обратная связь:</span>
                 <a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
             </p>
             <p class="footer-copyright">
-                <b>Разработано -</b>
+                <span>Разработано -</span>
                 <a href="https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a>
             </p>
             
         </section>
     </footer>
-    
-    <section class="modal modal-login">
-        <h2>Вход на сайт</h2>
-        <form action="" method="post" class="login-form">
-            <label for="login-field">Логин</label>
-            <input type="text" name="login" id="login-field"  placeholder="Логин">
-            <label for="password-field">Пароль</label>
-            <input type="password" name="password" id="password-field"  placeholder="Пароль">
-            <label for="remember-field">Запомнить меня</label>
-            <input type="checkbox" name="remember" id="remember-field">
-            <a href="" class="restore">Забыл пароль!</a>
-            <input class="button login-button" type="submit" value="Войти">
-        </form>
-        <p>Еще не с нами? <a href="">Зарегистрируйтесь!</a></p>
-        <button class="modal-close" type="button">
-            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
-        </button>
-    </section>
     
     <section class="modal modal-cart">
         <span>
