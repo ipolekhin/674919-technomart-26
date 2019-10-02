@@ -188,7 +188,52 @@ a {
 }
 
 .navigation-block a {
+    font-size: 14px;
+    line-height: 18px;    
     color: inherit;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.1);    
+}
+
+.navigation-block a:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.navigation-block a:active,
+.navigation-block a:focus {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.sliders a.button {
+    background-color: rgba(238, 54, 67, 1);
+}
+
+.sliders a.button:hover {
+    background-color: rgba(202, 44, 55, 1);
+}
+
+.sliders a.button:active,
+.sliders a.button:focus {
+    background-color: rgba(186, 39, 50, 1);
+}
+
+.sliders .sliders_item h2 {
+    font-size: 36px;
+    line-height: 36px;
+    text-transform: uppercase;
+}
+
+.sliders span {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.slider-indicators input[type = 'radio'] {
+}
+
+.slider-control button {
+/*    background-color: transparent*/
+    border: none;
 }
 
 .navigation-block .new {
@@ -229,13 +274,77 @@ a {
     background-color: #f2f6f8;    
 }
 
-.page-title h1 {
+.top-sale-title,
+.top-brand-title {
+    background-color: #f9f5f0;
+}
+
+.page-title h1,
+.top-sale-title h2,
+.top-brand h2 {
     font-family: 'Cuprum', Arial, sans-serif; 
     font-size: 30px;
     font-weight: 400;
     line-height: 30px;
     color: #32425c;
     text-transform: uppercase;
+}
+
+.top-brand ul {
+    list-style: none;
+}
+
+.top-brand .top-brand-item:hover {
+    box-shadow: 10px 0 25px rgba(41, 52, 73, 0.5);
+}
+
+.top-brand .top-brand-item:active {
+    box-shadow: 4px 0 10px rgba(41, 52, 73, 0.5);
+}
+
+.top-brand .top-brand-item:active a {
+    opacity: 0.3;
+}
+
+.company-services {
+    background-color: #f4f8f9;
+}
+
+.company-services h2 {
+    font-family: 'Cuprum', Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.company-services h3 {
+    font-family: 'Cuprum', Arial, sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #32425c;
+    text-transform: uppercase;
+}
+
+.company-services .tabs button {
+    font-family: 'Cuprum', Arial, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #fff;
+    background-color: #32425c;
+    border: none;
+    cursor: pointer;
+}
+
+.company-services .tabs button:hover {
+    background-color: #293449;
+}
+
+.company-services .tabs button.current {
+    color: #32425c;
+    background-color: #fff;
 }
 
 .breadcrumbs {
@@ -246,12 +355,25 @@ a {
 .breadcrumbs-current {
     line-height: 18px;
     color: #000;
+    text-transform: uppercase;
 }
 
+.filters > div:first-child {
+    background-color: #f7f3ec;
+}
+
+.filters h4 {
+    font-weight: 400;
+    line-height: 18px;
+    text-transform: uppercase;
+}
+
+.filters form > label,
 .filters legend {
     font-size: 17px;
     font-weight: 700;
     line-height: 30px;
+    text-transform: uppercase;
 }
 
 .filters ul {
@@ -259,6 +381,20 @@ a {
     font-size: 15px;
     line-height: 20px;
     text-transform: uppercase;
+}
+
+.price_value {
+    font-size: 16px;
+    line-height: 18px;
+    color: #444;
+}
+
+.price_value input {
+    font-size: 17px;
+    line-height: 18px;
+    text-align: center;
+    background-color: #f7f3ec;
+    border: none;
 }
 
 .filters input[type = 'submit'] {
@@ -269,6 +405,37 @@ a {
     cursor: pointer;
 }
 
+.catalog-sort a {
+    color: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px dotted #ee3643;
+}
+
+.catalog-sort button {
+    opacity: 0.3;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.catalog-sort a:hover {
+    color: rgba(0, 0, 0, 1);
+    border-bottom: 1px solid #ee3643;
+}
+
+.catalog-sort button:hover {
+/*    fill: #ee3643;*/
+    opacity: 1;
+}
+
+.catalog-sort li.current a {
+    color: rgba(255, 0, 0, 1);
+    border-bottom: none;
+}
+
+.catalog-sort li.current button {
+    opacity: 1;
+}
+
 .catalog-list {
     list-style: none;
 }
@@ -276,9 +443,11 @@ a {
 .catalog-item {
     text-align: center;
     background-color: #fff;
+    border: 1px solid #e5e5e5; 
 }
 
 .catalog-item:hover {
+    border: 1px solid #fff;
     box-shadow: 10px 0 25px rgba(41, 52, 73, 0.5);
 }
 
@@ -366,7 +535,10 @@ a {
 }
 
 .company-info .button,
-.company-contacts button {
+.company-contacts button,
+.top-sale-title .button,
+.top-brand-title .button {
+    font-family: 'Cuprum', Arial, sans-serif;
     font-size: 14px;
     line-height: 18px;
     color: #fff;
@@ -376,14 +548,20 @@ a {
 }
 
 .company-info .button:hover,
-.company-contacts button:hover {
+.company-contacts button:hover,
+.top-sale-title .button:hover,
+.top-brand-title .button:hover {
     background-color: #ca2c37;
 }
 
 .company-info .button:active,
 .company-contacts button:active,
+.top-sale-title .button:active,
+.top-brand-title .button:active,
 .company-info .button:focus,
-.company-contacts button:focus {
+.company-contacts button:focus,
+.top-sale-title .button:focus,
+.top-brand-title .button:focus {
     background-color: #ba2732;
 }
 
@@ -394,19 +572,10 @@ a {
 .pagination {
     list-style: none;
 }
-.Оформить_заказ {
-  font-size: 17px;
-  font-family: "Cuprum";
-  color: rgba(255, 255, 255, 0.502);
-  line-height: 1.059;
-  text-align: left;
-  position: absolute;
-  left: 979px;
-  top: 172.964px;
-  z-index: 256;
-}
 
 .pagination li a {
+    line-height: 18px;
+    text-transform: uppercase;
     color: #000;
     border: 1px solid #e5e5e5;
 }
@@ -431,6 +600,11 @@ footer {
     font-family: 'Cuprum', Arial, sans-serif;
     color: #fff;
     background-color: #32425c;
+}
+
+footer a.logo-footer{
+    background-color: #ee3643;
+    border-bottom: 5px solid #b52933;    
 }
 
 footer .footer-top {

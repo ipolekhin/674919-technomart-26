@@ -96,11 +96,11 @@
                 </a>
             </li>
             <li>
-                <img src="img/icon-right-small.svg" alt="" width="14" height="12">
+                <img src="img/icon-right-small.svg" alt="" width="8" height="12">
                 <a href="catalog.html">Каталог</a>
             </li>
             <li class="breadcrumbs-current">
-                <img src="img/icon-right-small.svg" alt="" width="14" height="12">
+                <img src="img/icon-right-small.svg" alt="" width="8" height="12">
                 Перфораторы
             </li>
         </ul>
@@ -110,8 +110,10 @@
         </div>
         
         <aside class="container-left">
-            <section class="filters">                   
-                <h4>Фильтр:</h4>
+            <section class="filters">   
+                <div>
+                    <h4>Фильтр:</h4>
+                </div>
                 <!-- Форма фильтров слева -->
                 <form action="https://echo.htmlacademy.ru" method="get" oninput="priceoutput_min.value=price.value" class="filters-form">
                     <label>Цена:</label>
@@ -125,9 +127,9 @@
                                 <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">
                             </div>
                         </div>
-                        <div>
-                            <input type="text" id="price_min" name="price_min"/> -
-                            <input type="text" id="price_max" name="price_max"/>
+                        <div class="price_value">
+                            <input type="text" id="price_min" name="price_min" value="0" min="0" max="29999"> -
+                            <input type="text" id="price_max" name="price_max" value="30000" min="1" max="30000">
                         </div>
                     </div>
                     <fieldlist>
@@ -188,29 +190,31 @@
         </aside> 
         
         <div class="container-right">
-            <section class="filters">                   
-                <h4 class="visually-hidden">Сортировка:</h4>
-                <ul class="catalog-sort">
-                    <li class="sort-price">
-                        <a href="">По цене</a>
-                    </li>
-                    <li class="sort-type">
-                        <a href="">По типу</a>
-                    </li>
-                    <li class="sort-function">
-                        <a href="">По функционалу</a>
-                    </li>
-                    <li class="sort-up-dir">
-                        <a href="">
-                            <img src="img/icon-up-dir.svg" alt="Выход" width="11" height="10">
-                        </a>
-                    </li>
-                    <li class="sort-down-dir">
-                        <a href="">
-                            <img src="img/icon-down-dir.svg" alt="Выход" width="11" height="10">
-                        </a>
-                    </li>
-                </ul>
+            <section class="filters">      
+                <div>             
+                    <h4>Сортировка:</h4>
+                    <ul class="catalog-sort">
+                        <li class="sort-price current">
+                            <a href="">По цене</a>
+                        </li>
+                        <li class="sort-type">
+                            <a href="">По типу</a>
+                        </li>
+                        <li class="sort-function">
+                            <a href="">По функционалу</a>
+                        </li>
+                        <li class="sort-up-dir current">
+                            <button type="button">
+                                <img src="img/icon-up-dir.svg" alt="Выход" width="11" height="10">
+                            </button>
+                        </li>
+                        <li class="sort-down-dir">
+                            <button type="button">
+                                <img src="img/icon-down-dir.svg" alt="Выход" width="11" height="10">
+                            </button>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
             <section class="catalog">
@@ -421,7 +425,9 @@
     <footer class="main-footer">
         <section class="footer-top">
             <div>
-                <img src="img/logo_footer.svg" alt="логотип">
+                <a class="logo-footer" href="index.html">
+                    <img src="img/logo_footer.svg" alt="логотип">
+                </a>
                 <p class="footer-contacts">
                     г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
                     +7 (812) 555-05-55
