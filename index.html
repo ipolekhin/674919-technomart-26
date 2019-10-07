@@ -17,19 +17,15 @@
                 <div class="search">
                     <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
                         <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> 
-                        <input class="button search-button" type="search" name="search" placeholder="Поиск:">
+                        <input class="search" type="search" name="search" placeholder="Поиск:">
                     </form>
                 </div>
-                <div class="bookmark">
-                    <a href="bookmark">
-                        <img src="img/icon-bookmark.svg" alt="Закладки" width="14" height="16" />Закладки: 0
-                    </a>
-                </div>
-                <div class="cart">
-                    <a href="cart">
-                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Корзина: 0
-                    </a>
-                </div>                  
+                <a class="bookmark" href="bookmark">
+                    <img src="img/icon-bookmark.svg" alt="Закладки" width="14" height="16" />Закладки: 0
+                </a>
+                <a class="cart" href="cart">
+                    <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Корзина: 0
+                </a>                
                 <a class="order" href="order">
                     Оформить заказ
                 </a>
@@ -84,9 +80,9 @@
                 Интернет-магазин строительных материалов и инструментов «Техномарт»
             </h1>
 
-            <section class="navigation-block">
+            <section class="promo-block">
                 <h2 class="visually-hidden">навигационный блок</h2> 
-                <div class="navigation-block-head">
+                <div class="promo-block-head">
                     <div class="category-materials">
                         <span class="new">new</span>
                         <h2>Материалы</h2>
@@ -104,32 +100,35 @@
                         <a href="">Для стройки</a>
                     </div> 
                 </div> 
-                <div class="navigation-block-foot">
+                <div class="promo-block-foot">
                     <div class="sliders">
-                        <!-- Слайдер -->
-                        <div class="sliders_item">
-                            <div>
-                                <h2>Дрели</h2>
-                                <span>Соседям на радость</span>
+                        <div class="slider-list">
+                            <div class="slider-item">
+                                <!-- Временно скрываю блок так как позиционирование будет в следующем задание -->   
+                                <div class="visually-hidden">
+                                    <h2>Дрели</h2>
+                                    <span>Соседям на радость</span>
+                                </div>
+                                <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
+                                <a class="button" href="catalog.html">Открыть каталог</a>
                             </div>
-                            <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
-                            <a class="button" href="catalog.html">Открыть каталог</a>
-                        </div>
-                        <div class="sliders_item">
-                            <div>
-                                <h2>Перфораторы</h2>
-                                <span>Настоящие мужские игрушки</span>
+                            <!-- Временно скрываю блок так как позиционирование будет в следующем задание -->   
+                            <div class="visually-hidden slider-item">
+                                <div>
+                                    <h2>Перфораторы</h2>
+                                    <span>Настоящие мужские игрушки</span>
+                                </div>
+                                <img src="img/slide_perforators.jpg" alt="Дрели" width="620" height="266" />
+                                <a class="button" href="catalog.html">Открыть каталог</a>
                             </div>
-                            <img src="img/slide_perforators.jpg" alt="Дрели" width="620" height="266" />
-                            <a class="button" href="catalog.html">Открыть каталог</a>
                         </div>
-                        <div class="slider-indicators">
+                        <div class="visually-hidden slider-indicators">
                             <input type="radio" name="radio-1" id="radio-1">
                             <label for="radio-1"></label>
                             <input type="radio" name="radio-2" id="radio-2" checked="">
                             <label for="radio-2"></label>
                         </div>
-                        <div class="slider-control">
+                        <div class="visually-hidden slider-control">
                             <button class="prev" type="button">
                                 <img src="img/icon-left.svg" alt="назад" width="22" height="40">
                             </button>
@@ -227,7 +226,7 @@
                     </li>
                     <li class="catalog-item">
                         <span class="catalog-item-new">new</span>
-                        <div class="action visually-hidden">
+                        <div class="action">
                             <a class="button" href="#">
                                 <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
                             </a>
@@ -305,46 +304,55 @@
                 <h2>Сервисы</h2>
                 <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
                 Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-
-                <div class="tabs">
-                    <button class="tab current" type="button">Доставка</button>
-                    <button class="tab" type="button">Гарантия</button>
-                    <button class="tab" type="button">Кредит</button>
-                    <img src="img/tab-shadow.png">
-                </div>
-                <div class="tab-view">
-                    <div class="tab-view-delivery current">
-                        <h3>Доставка</h3>
-                        <p>Мы с удовольствием доставим ваш товар прямо<br>
-                        к вашему подъезду совершенно бесплатно!<br>
-                        Ведь мы неплохо заработаем,<br>
-                        поднимая его на ваш этаж!</p>
-                        <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />
+                <div class="index-columns">  
+                    <ul class="tab-list">
+                        <li class="tab-item">
+                            <button class="tab current" type="button">Доставка</button>
+                        </li>
+                        <li class="tab-item">
+                            <button class="tab" type="button">Гарантия</button>
+                        </li>
+                        <li class="tab-item">
+                            <button class="tab" type="button">Кредит</button>
+                        </li>
+                    </ul>
+                    <!--img src="img/tab-shadow.png"-->
+                    <div class="tab-view">
+                        <div class="tab-view-delivery current">
+                            <h3>Доставка</h3>
+                            <p>Мы с удовольствием доставим ваш товар прямо<br>
+                            к вашему подъезду совершенно бесплатно!<br>
+                            Ведь мы неплохо заработаем,<br>
+                            поднимая его на ваш этаж!</p>
+<!--                            <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />-->
+                        </div>
+<!--
+                        <div class="tab-view-guarantee current">
+                            <h3>Гарантия</h3>
+                            <p>Если купленный у нас товар поломается или заискрит, <br>
+                            а также в случае пожара, спровоцированного его возгоранием, <br> 
+                            вы всегда можете быть уверены в нашей гарантии. Мы обменяем <br>
+                            сгоревший товар на новый. <br>
+                            Дом уж восстановите как-нибудь сами.</p>
+                            <img src="img/tab_guarantee.png" alt="Доставка" width="389" height="283" />
+                        </div>
+                        <div class="tab-view-credit current">
+                            <h3>Кредит</h3>
+                            <p>Залезть в долговую яму стало проще!<br>
+                            Кредитные консультанты придут вам на помощь.</p>
+                            <img src="img/tab_credit.png" alt="Доставка" width="465" height="285" />
+                        </div>
+-->
                     </div>
-                    <div class="tab-view-guarantee current">
-                        <h3>Гарантия</h3>
-                        <p>Если купленный у нас товар поломается или заискрит, <br>
-                        а также в случае пожара, спровоцированного его возгоранием, <br> 
-                        вы всегда можете быть уверены в нашей гарантии. Мы обменяем <br>
-                        сгоревший товар на новый. <br>
-                        Дом уж восстановите как-нибудь сами.</p>
-                        <img src="img/tab_guarantee.png" alt="Доставка" width="389" height="283" />
-                    </div>
-                    <div class="tab-view-credit current">
-                        <h3>Кредит</h3>
-                        <p>Залезть в долговую яму стало проще!<br>
-                        Кредитные консультанты придут вам на помощь.</p>
-                        <img src="img/tab_credit.png" alt="Доставка" width="465" height="285" />
-                    </div>
-                </div>
+                </div> 
             </div>
         </section>
                 
         <div class="index-columns container">
             <section class="company-info">
                 <h2>Компания «Техномарт»</h2> 
-                <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и<br> строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p> <br>  
-                <p>Мы можем доставить ваш товар в самые отдаленные точки России! <br>
+                <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>  
+                <p>Мы можем доставить ваш товар в самые отдаленные точки России!
                 Техномарт работает со многими транспортными компаниями: </p>
                 <ul class="company-transports">
                     <li>Деловые линии</li>
@@ -356,14 +364,14 @@
 
             <section class="company-contacts">
                 <h2>Контакты</h2> 
-                <p>Вы можете забрать товар сами, <br>
+                <p>Вы можете забрать товар сами,
                 заехав в наш офис:</p>
                 <a href="" class="big-map">
                     <img src="img/map.png" alt="Карта" width="300" height="158" />
                 </a>
-                <button class="write-us" type="button">
+                <a class="button write-us" href="#">
                     Заблудились? НапиШИТЕ НАМ!
-                </button>
+                </a>
             </section>
         </div>
     </main>
