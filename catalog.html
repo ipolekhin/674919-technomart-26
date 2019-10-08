@@ -16,15 +16,19 @@
                 </a>  
                 <div class="search">
                     <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
-                        <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> 
                         <input class="search" type="search" name="search" placeholder="Поиск:">
+                        <label for="search">
+                            <svg x="0px" y="0px" width="17px" height="17px" >
+                            <path fill="#fff" d="M17,15.586l-3.542-3.542C14.421,10.782,15,9.21,15,7.5C15,3.358,11.643,0,7.5,0C3.358,0,0,3.358,0,7.5 C0,11.643,3.358,15,7.5,15c1.71,0,3.282-0.579,4.544-1.542L15.586,17L17,15.586z M2,7.5C2,4.467,4.467,2,7.5,2 C10.532,2,13,4.467,13,7.5c0,3.032-2.468,5.5-5.5,5.5C4.467,13,2,10.532,2,7.5z"/>
+                            </svg>
+                        </label>
                     </form>
                 </div>
                 <a class="bookmark" href="bookmark">
-                    <img src="img/icon-bookmark.svg" alt="Закладки" width="14" height="16" />Закладки: 0
+                    Закладки: 0
                 </a>
                 <a class="something-in cart" href="cart">
-                    <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Корзина: 10
+                    Корзина: 10
                 </a>                 
                 <a class="order" href="order">
                     Оформить заказ
@@ -41,7 +45,6 @@
                 </p> 
                 <div class="header-middle-contacts">
                     <div class="contacts-phone">
-                        <img src="img/icon-phone.svg" alt="Телефон" width="19" height="19" />
                         <a href="tel:+7 (812) 555-05-55">+7 (812) 555-05-55</a>
                     </div>
                     <div class="contacts-adress">
@@ -50,15 +53,21 @@
                 </div>
                 <div>
                     <ul class="user-navigation">
-                        <li class="login-link">
+                        <li class="login">
                             <a href="">
-                                <img src="img/icon-user.svg" alt="Пользователь" width="20" height="18">
+                                <svg x="0px" y="0px" width="20px" height="18px">
+                                <path fill="#c5c5c5" d="M17.881,14.166c-2.144-0.735-4.256-1.666-5.207-2.39c-0.657-0.501-0.77-1.618-0.517-2.415 c1.118-0.903,1.864-2.477,1.864-4.278C14.021,2.276,12.221,0,10,0S5.979,2.276,5.979,5.083c0,1.801,0.746,3.374,1.863,4.277c0.253,0.798,0.141,1.915-0.517,2.416c-0.95,0.724-3.063,1.654-5.207,2.39S0,18,0,18h20C20,18,20.025,14.901,17.881,14.166z"/>
+                                </svg>
                                 Равшан Джамшутович
                             </a>
                         </li>
                         <li class="logout">
                             <a href="">
-                                <img src="img/icon-logout.svg" alt="Выход" width="20" height="17">
+                                <svg x="0px" y="0px" width="21px" height="17px">
+                                <polygon fill="#c5c5c5" points="21,8.5 12.125,0 12.125,6 6.125,6 6.125,11 12.125,11 12.125,17 	"/>
+                                <path fill="#c5c5c5" d="M3.106,13.952V3.048c0.018-0.376,0.171-1.057,1.01-1.057h5.027V0H4.116C1.938,0,1.112,1.81,1.087,3.027
+                                v10.946C1.112,15.189,1.938,17,4.116,17h5.027v-1.99H4.116C3.277,15.01,3.124,14.327,3.106,13.952z"/>
+                                </svg>
                             </a>
                         </li>
                     </ul>                
@@ -92,15 +101,12 @@
                     </a>
                 </li>
                 <li>
-                    <img src="img/icon-right-small.svg" alt="" width="8" height="12">
                     <a href="catalog.html">Каталог</a>
                 </li>
                 <li>
-                    <img src="img/icon-right-small.svg" alt="" width="8" height="12">
                     <a href="catalog.html">Инструмент</a>
                 </li>
                 <li class="breadcrumbs-current">
-                    <img src="img/icon-right-small.svg" alt="" width="8" height="12">
                     <span>Перфораторы</span>
                 </li>
             </ul>
@@ -116,9 +122,9 @@
                             <h4>Фильтр:</h4>
                         </div>
                         <!-- Форма фильтров слева -->
-                        <form action="https://echo.htmlacademy.ru" method="get" oninput="priceoutput_min.value=price.value" class="filters-form">
-                            <label>Цена:</label>
-                            <div>
+                        <form action="https://echo.htmlacademy.ru" method="get" class="filters-form">
+                            <fieldset>
+                                <legend>Цена:</legend>
                                 <div class="price_range">
                                     <div class="price_range-min">
                                         <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">
@@ -132,59 +138,92 @@
                                     <input type="text" id="price_min" name="price_min" value="0" min="0" max="29999"> <span>-</span>
                                     <input type="text" id="price_max" name="price_max" value="30000" min="1" max="30000">
                                 </div>
-                            </div>
-                            <fieldlist>
+                            </fieldset>
+                            <fieldset>
                                 <legend>Производители:</legend>
                                 <ul>
                                     <li class="filter-option">
-                                        <label>
-                                            <img src="img/checkbox-on.svg" alt="checkbox" width="27" height="23">
-                                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id" checked> Bosch
+                                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="filter-bosch" name="brand-id" checked> 
+                                        <label for="filter-bosch">
+                                        <svg x="0px" y="0px" width="27px" height="23px">
+                                            <polygon fill="#c5c5c5" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439"/>
+                                            <path fill="#c5c5c5" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0 H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                                            <path fill="#c5c5c5" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3 C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                                        </svg>                                           
+                                        Bosch
                                         </label>
                                     </li>
                                     <li class="filter-option">
-                                        <label>
-                                            <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
-                                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id"> Интерскол
+                                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="filter-interskol" name="brand-id">
+                                        <label for="filter-interskol">
+                                        <svg x="0px" y="0px" width="27px" height="23px">
+                                            <polygon fill="#c5c5c5" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439"/>
+                                            <path fill="#c5c5c5" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0 H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                                            <path fill="#c5c5c5" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3 C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                                        </svg> 
+                                        Интерскол
                                         </label>
                                     </li>
                                     <li class="filter-option">
-                                        <label>
-                                            <img src="img/checkbox-on.svg" alt="checkbox" width="27" height="23">
-                                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id" checked> Makita
+                                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="filter-makita" name="brand-id" checked> 
+                                        <label for="filter-makita">
+                                        <svg x="0px" y="0px" width="27px" height="23px">
+                                            <polygon fill="#c5c5c5" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439"/>
+                                            <path fill="#c5c5c5" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0 H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                                            <path fill="#c5c5c5" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3 C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                                        </svg> 
+                                        Makita
                                         </label>
                                     </li>
                                     <li class="filter-option">
-                                        <label>
-                                            <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
-                                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id"> DeWalt
+                                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="filter-dewalt" name="brand-id">
+                                        <label for="filter-dewalt">
+                                        <svg x="0px" y="0px" width="27px" height="23px">
+                                            <polygon fill="#c5c5c5" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439"/>
+                                            <path fill="#c5c5c5" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0 H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                                            <path fill="#c5c5c5" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3 C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                                        </svg> 
+                                        DeWalt
                                         </label>
                                     </li>
                                     <li class="filter-option">
-                                        <label>
-                                            <img src="img/checkbox-off.svg" alt="checkbox" width="23" height="23">
-                                            <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="brand-id"> Hitachi
+                                        <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="filter-hitachi" name="brand-id"> 
+                                        <label for="filter-hitachi">
+                                        <svg x="0px" y="0px" width="27px" height="23px">
+                                            <polygon fill="#c5c5c5" points="7.285,7.486 4.456,10.315 12.239,18.098 26.171,4.166 23.343,1.337 12.239,12.439"/>
+                                            <path fill="#c5c5c5" d="M21,20c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1h16.908l1.585-1.585C21.051,0.158,20.545,0,20,0 H3C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3v-9.829l-2,2V20z"/>
+                                            <path fill="#c5c5c5" d="M20,2c0.542,0,1,0.458,1,1v17c0,0.542-0.458,1-1,1H3c-0.542,0-1-0.458-1-1V3c0-0.542,0.458-1,1-1H20 M20,0H3 C1.35,0,0,1.35,0,3v17c0,1.65,1.35,3,3,3h17c1.65,0,3-1.35,3-3V3C23,1.35,21.65,0,20,0L20,0z"/>
+                                        </svg> 
+                                        Hitachi
                                         </label> 
                                     </li>
                                 </ul>
-                            </fieldlist>
-                            <fieldlist>
+                            </fieldset>
+                            <fieldset>
                                 <legend>Питание:</legend>
                                 <ul>
                                     <li class="filter-option">
-                                        <label>
-                                            <img src="img/radio-on.svg" alt="radio" width="25" height="25">
-                                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power-id" checked> Аккумуляторные
+                                        <input class="visually-hidden filter-input filter-input-radio" type="radio" id="filter-accumulator" name="power-id" checked>
+                                        <label for="filter-accumulator">
+                                        <svg x="0px" y="0px" width="25px" height="25px" >
+                                            <path fill="#c5c5c5" d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0 C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"/>
+                                            <circle fill="#c5c5c5" cx="12.5" cy="12.5" r="4.5"/>
+                                        </svg>
+                                        Аккумуляторные
                                         </label>
                                     </li>
-                                    <li class="filter-option">
-                                        <label>
-                                            <img src="img/radio-off.svg" alt="radio" width="25" height="25">
-                                            <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power-id"> Сетевые
+                                    <li class="filter-option">  
+                                        <input class="visually-hidden filter-input filter-input-radio" type="radio" id="filter-mains" name="power-id"> 
+                                        <label for="filter-mains">
+                                        <svg x="0px" y="0px" width="25px" height="25px" >
+                                            <path fill="#c5c5c5" d="M12.5,4c4.687,0,8.5,3.813,8.5,8.5c0,4.687-3.813,8.5-8.5,8.5C7.813,21,4,17.187,4,12.5C4,7.813,7.813,4,12.5,4 M12.5,0 C5.597,0,0,5.597,0,12.5S5.597,25,12.5,25S25,19.403,25,12.5S19.403,0,12.5,0L12.5,0z"/>
+                                            <circle fill="#c5c5c5" cx="12.5" cy="12.5" r="4.5"/>
+                                        </svg>
+                                        Сетевые
                                         </label>  
                                     </li>
                                 </ul>
-                            </fieldlist>
+                            </fieldset>
                             <input class="button filter-button" type="submit" value="Показать">
                         </form>
                     </section>
@@ -218,9 +257,9 @@
                         <h2 class="visually-hidden">Товары</h2> 
                         <ul class="catalog-list">
                             <li class="catalog-item">
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -239,9 +278,9 @@
                                 </p>
                             </li>
                             <li class="catalog-item">
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -260,14 +299,14 @@
                             </li>
                             <li class="catalog-item">
                                 <span class="catalog-item-new">new</span>
-                                <div class="action display">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
-                                <div class="catalog-item-image on-focus">
-                                    <img class="on-focus visually-hidden" src="img/perforator_3.jpg" alt="Перфоратор BOSCH BFG 2000" width="218" height="170">
+                                <div class="catalog-item-image">
+                                    <img src="img/perforator_3.jpg" alt="Перфоратор BOSCH BFG 2000" width="218" height="170">
                                 </div>
                                 <h3>
                                     <a href="">
@@ -275,14 +314,15 @@
                                     </a>
                                 </h3>
                                 <p class="catalog-item-price">
+                                    <del></del>
                                     <a class="button" href="#">12500 ₽.</a>
                                 </p>
                             </li>
                             <!-- Следующая строка товаров -->
                             <li class="catalog-item">
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -301,9 +341,9 @@
                             </li>
                             <li class="catalog-item">                   
                                 <span class="catalog-item-new">new</span>
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -321,9 +361,9 @@
                                 </p>
                             </li>
                             <li class="catalog-item">
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -342,9 +382,9 @@
                             <!-- Следующая строка товаров -->
                             <li class="catalog-item">
                                 <span class="catalog-item-new">new</span>
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -362,9 +402,9 @@
                                 </p>
                             </li>
                             <li class="catalog-item">
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>
@@ -382,9 +422,9 @@
                                 </p>
                             </li>
                             <li class="catalog-item">
-                                <div class="action visually-hidden">
+                                <div class="action">
                                     <a class="button" href="#">
-                                        <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                        Купить
                                     </a>
                                     <a class="button" href="#">В закладки</a>    
                                 </div>

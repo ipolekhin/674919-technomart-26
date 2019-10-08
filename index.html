@@ -16,15 +16,19 @@
                 </a> 
                 <div class="search">
                     <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
-                        <img src="img/icon-search.svg" alt="Поиск" width="17" height="17" /> 
-                        <input class="search" type="search" name="search" placeholder="Поиск:">
+                        <input class="search" type="search" id="search" name="search" placeholder="Поиск:">
+                        <label for="search">
+                            <svg x="0px" y="0px" width="17px" height="17px" >
+                            <path fill="#fff" d="M17,15.586l-3.542-3.542C14.421,10.782,15,9.21,15,7.5C15,3.358,11.643,0,7.5,0C3.358,0,0,3.358,0,7.5 C0,11.643,3.358,15,7.5,15c1.71,0,3.282-0.579,4.544-1.542L15.586,17L17,15.586z M2,7.5C2,4.467,4.467,2,7.5,2 C10.532,2,13,4.467,13,7.5c0,3.032-2.468,5.5-5.5,5.5C4.467,13,2,10.532,2,7.5z"/>
+                            </svg>
+                        </label>
                     </form>
                 </div>
                 <a class="bookmark" href="bookmark">
-                    <img src="img/icon-bookmark.svg" alt="Закладки" width="14" height="16" />Закладки: 0
+                    Закладки: 0
                 </a>
                 <a class="cart" href="cart">
-                    <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Корзина: 0
+                    Корзина: 0
                 </a>                
                 <a class="order" href="order">
                     Оформить заказ
@@ -41,7 +45,6 @@
                 </p> 
                 <div class="header-middle-contacts">
                     <div class="contacts-phone">
-                        <img src="img/icon-phone.svg" alt="Телефон" width="19" height="19" />
                         <a href="tel:+7 (812) 555-05-55">+7 (812) 555-05-55</a>
                     </div>
                     <div class="contacts-adress">
@@ -51,7 +54,11 @@
                 <ul class="user-navigation">
                     <li class="login-link">
                         <a href="">
-                            <img src="img/icon-login.svg" alt="Вход" width="20" height="17">Войти
+                            <svg x="0px" y="0px" width="20px" height="17px" >
+                            <polygon fill="#c5c5c5" points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	"/>
+                            <path fill="#c5c5c5" d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,1.811,19.164,0,16.986,0h-5.027 v1.99h5.027c0.839,0,0.992,0.681,1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z"/>
+                            </svg>
+                            Войти
                         </a>
                     </li>
                     <li class="registration">
@@ -454,31 +461,37 @@
     </section>
     
     <section class="modal modal-write-us">
-        <h2 class="visually-hiden">Напишите нам</h2>
+        <h2 class="visually-hidden">Напишите нам</h2>
         <form action="https://echo.htmlacademy.ru" method="post" class="write-us-form">
-            <div class="half-width">
-                <label for="name-field">Ваше имя:</label><br>
-                <input type="text" name="name" id="name-field" placeholder="Имя Фамилия">
+            <div class="input-text">
+                <div class="half-width">
+                    <label for="name-field">Ваше имя:</label>
+                    <input type="text" name="name" id="name-field" placeholder="Имя Фамилия">
+                </div>
+                <div class="half-width">
+                    <label for="email-field">Ваш e-mail:</label>
+                    <input type="email" name="email" id="email-field" placeholder="email@example.com">
+                </div>
+                <div class="textarea">
+                    <label for="comment-field">Текст письма:</label>
+                    <textarea name="field" id="comment-field" cols="30" rows="10" placeholder="В свободной форме"></textarea>
+                </div>
             </div>
-            <div class="half-width">
-                <label for="email-field">Ваш e-mail:</label><br>
-                <input type="email" name="email" id="email-field" placeholder="email@example.com">
+            <div class="button-submit">
+                <input class="button write-us-button" type="submit" value="Отправить">
             </div>
             
-            <label for="comment-field">Текст письма:</label><br>
-            <textarea name="field" id="comment-field" cols="30" rows="10" placeholder="В свободной форме"></textarea>
-            <input class="button write-us-button" type="submit" value="Отправить">
         </form>
         <button class="modal-close">
-            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+            <span class="visually-hidden">Закрыть</span>
         </button>
     </section>
     
     <section class="modal modal-map">
-        <h2 class="visually-hiden">Адрес проезда</h2>
+        <h2 class="visually-hidden">Адрес проезда</h2>
         <img src="img/map_full.png" alt="Большая Конюшенная ул., 19" width="940" height="446">
-        <button class="modal-close">
-            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
+        <button class="modal-close" type="button">
+            <span class="visually-hidden">Закрыть</span>
         </button>
     </section>
   </body>
