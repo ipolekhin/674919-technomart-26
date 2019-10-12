@@ -88,59 +88,53 @@
             </h1>
 
             <section class="promo-block">
-                <h2 class="visually-hidden">навигационный блок</h2> 
+                <h2 class="visually-hidden">Промо блок</h2> 
                 <div class="promo-block-head">
                     <div class="category-materials">
                         <span class="new">new</span>
                         <h2>Материалы</h2>
                         <img src="img/icon-1.svg" alt="Материалы" width="44" height="65" />
-                        <a href="">На любой вкус</a>
+                        <a class="promo-button button" href="">На любой вкус</a>
                     </div> 
                     <div class="category-tools">
                         <h2>Инструмент</h2>
                         <img src="img/icon-2.svg" alt="Инструмент" width="75" height="61" />
-                        <a href="">На все случаи</a>
+                        <a class="promo-button button" href="">На все случаи</a>
                     </div> 
                     <div class="category-technic">
                         <h2>Техинка</h2>
                         <img src="img/icon-3.svg" alt="Техинка" width="78" height="62" />
-                        <a href="">Для стройки</a>
+                        <a class="promo-button button" href="">Для стройки</a>
                     </div> 
                 </div> 
                 <div class="promo-block-foot">
                     <div class="sliders">
-                        <div class="slider-list">
-                            <div class="slider-item">
-                                <!-- Временно скрываю блок так как позиционирование будет в следующем задание -->   
-                                <div class="visually-hidden">
-                                    <h2>Дрели</h2>
-                                    <span>Соседям на радость</span>
+                        <input class="visually-hidden" type="radio" name="toggle" id="product-1" checked="">
+                        <input class="visually-hidden" type="radio" name="toggle" id="product-2">                     
+                        <ul class="slider-list">
+                            <li class="slider-item" id="slide1"> 
+                                <div class="slider-title">
+                                    <h3>Дрели</h3>
+                                    <p>Соседям на радость!</p>
                                 </div>
-                                <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" />
-                                <a class="button" href="catalog.html">Открыть каталог</a>
-                            </div>
-                            <!-- Временно скрываю блок так как позиционирование будет в следующем задание -->   
-                            <div class="visually-hidden slider-item">
-                                <div>
-                                    <h2>Перфораторы</h2>
-                                    <span>Настоящие мужские игрушки</span>
+                                <a class="slider-item-button button" href="catalog.html">Открыть каталог</a>
+                            </li>
+                            <li class="slider-item" id="slide2">
+                                <div class="slider-title">
+                                    <h3>Перфораторы</h3>
+                                    <p>Настоящие мужские игрушки</p>
                                 </div>
-                                <img src="img/slide_perforators.jpg" alt="Дрели" width="620" height="266" />
-                                <a class="button" href="catalog.html">Открыть каталог</a>
-                            </div>
+                                <a class="slider-item-button button" href="catalog.html">Открыть каталог</a>
+                            </li>
+                        </ul>
+                        <div class="slider-indicators">
+                            <label for="product-1"><i></i></label>
+                            <label for="product-2"><i></i></label>
                         </div>
-                        <div class="visually-hidden slider-indicators">
-                            <input type="radio" name="radio-1" id="radio-1">
-                            <label for="radio-1"></label>
-                            <input type="radio" name="radio-2" id="radio-2" checked="">
-                            <label for="radio-2"></label>
-                        </div>
-                        <div class="visually-hidden slider-control">
+                        <div class="slider-control">
                             <button class="prev" type="button">
-                                <img src="img/icon-left.svg" alt="назад" width="22" height="40">
                             </button>
                             <button class="next" type="button">
-                                <img src="img/icon-right.svg" alt="вперёд" width="22" height="40">
                             </button>
                         </div>
                     </div> 
@@ -148,12 +142,12 @@
                         <div class="category-discount">
                             <h2>Скидки 50%</h2>
                             <img src="img/icon-4.svg" alt="Скидки" width="59" height="72" />
-                            <a href="">На 350 товаров</a>
+                            <a class="promo-button button" href="">На 350 товаров</a>
                         </div> 
                         <div class="page-delivery">
                             <h2>Доставка</h2>
                             <img src="img/icon-5.svg" alt="Доставка" width="78" height="63" />
-                            <a href="">Бесплатно</a>
+                            <a class="promo-button button" href="">Бесплатно</a>
                         </div>
                     </div>
                 </div>
@@ -168,7 +162,7 @@
                     <li class="catalog-item">
                         <div class="action">
                             <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                Купить
                             </a>
                             <a class="button" href="#">В закладки</a>    
                         </div>
@@ -190,7 +184,7 @@
                     <li class="catalog-item">
                         <div class="action">
                             <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                Купить
                             </a>
                             <a class="button" href="#">В закладки</a>    
                         </div>
@@ -212,7 +206,7 @@
                     <li class="catalog-item">
                         <div class="action">
                             <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                Купить
                             </a>
                             <a class="button" href="#">В закладки</a>    
                         </div>
@@ -235,7 +229,7 @@
                         <span class="catalog-item-new">new</span>
                         <div class="action">
                             <a class="button" href="#">
-                                <img src="img/icon-cart.svg" alt="Корзина" width="15" height="15" />Купить
+                                Купить
                             </a>
                             <a class="button" href="#">В закладки</a>    
                         </div>
@@ -324,7 +318,6 @@
                             <button class="tab" type="button">Кредит</button>
                         </li>
                     </ul>
-                    <!--img src="img/tab-shadow.png"-->
                     <div class="tab-view">
                         <div class="tab-view-delivery current">
                             <h3>Доставка</h3>
@@ -332,10 +325,9 @@
                             к вашему подъезду совершенно бесплатно!<br>
                             Ведь мы неплохо заработаем,<br>
                             поднимая его на ваш этаж!</p>
-<!--                            <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />-->
+                            <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />
                         </div>
-<!--
-                        <div class="tab-view-guarantee current">
+                        <div class="tab-view-guarantee">
                             <h3>Гарантия</h3>
                             <p>Если купленный у нас товар поломается или заискрит, <br>
                             а также в случае пожара, спровоцированного его возгоранием, <br> 
@@ -344,13 +336,12 @@
                             Дом уж восстановите как-нибудь сами.</p>
                             <img src="img/tab_guarantee.png" alt="Доставка" width="389" height="283" />
                         </div>
-                        <div class="tab-view-credit current">
+                        <div class="tab-view-credit">
                             <h3>Кредит</h3>
                             <p>Залезть в долговую яму стало проще!<br>
                             Кредитные консультанты придут вам на помощь.</p>
                             <img src="img/tab_credit.png" alt="Доставка" width="465" height="285" />
                         </div>
--->
                     </div>
                 </div> 
             </div>

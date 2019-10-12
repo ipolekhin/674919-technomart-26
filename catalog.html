@@ -122,21 +122,38 @@
                             <h4>Фильтр:</h4>
                         </div>
                         <!-- Форма фильтров слева -->
+<!--                        <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">-->
                         <form action="https://echo.htmlacademy.ru" method="get" class="filters-form">
-                            <fieldset>
+                            <fieldset class="filter-hard">
                                 <legend>Цена:</legend>
-                                <div class="price_range">
-                                    <div class="price_range-min">
-                                        <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">
+                                <div class="price-range">
+                                    <!--Полная ширина прогресс бара-->
+                                    <div class="scale">
+                                        <!--выбранный диапозон-->
+                                        <div class="bar"></div>
                                     </div>
-                                    <div class="price_range_selected"></div>
-                                    <div class="price_range-max">
-                                        <img src="img/filter-button.svg" alt="Кнопка фильтра" width="20" height="22">
+                                    <div class="toggle toggle-min">
+                                        <svg x="0px" y="0px" width="20px" height="23px" viewBox="0 0 20 23" >
+                                            <path opacity="0.3" fill="#ABABAB" d="M10,20C4.477,20,0,15.522,0,10v2c0,5.522,4.477,10,10,10c5.522,0,10-4.478,10-10v-2 C20,15.522,15.522,20,10,20z"/>
+                                            <circle fill="#FFFFFF" cx="10" cy="10" r="10"/>
+                                            <circle fill="#ABABAB" cx="10" cy="10" r="2"/>
+                                        </svg>
+                                    </div>
+                                    <div class="toggle toggle-max">
+                                        <svg x="0px" y="0px" width="20px" height="23px" viewBox="0 0 20 23" >
+                                            <path opacity="0.3" fill="#ABABAB" d="M10,20C4.477,20,0,15.522,0,10v2c0,5.522,4.477,10,10,10c5.522,0,10-4.478,10-10v-2 C20,15.522,15.522,20,10,20z"/>
+                                            <circle fill="#FFFFFF" cx="10" cy="10" r="10"/>
+                                            <circle fill="#ABABAB" cx="10" cy="10" r="2"/>
+                                        </svg>
                                     </div>
                                 </div>
-                                <div class="price_value">
-                                    <input type="text" id="price_min" name="price_min" value="0" min="0" max="29999"> <span>-</span>
-                                    <input type="text" id="price_max" name="price_max" value="30000" min="1" max="30000">
+                                <div class="price-value">
+                                    <label class="min-price">
+                                        <input type="text" id="price_min" name="price_min" value="0" min="0" max="29999"> 
+                                    </label>
+                                    <label class="max-price">
+                                        <input type="text" id="price_max" name="price_max" value="30000" min="1" max="30000">
+                                    </label>
                                 </div>
                             </fieldset>
                             <fieldset>
@@ -242,12 +259,12 @@
                             <li class="sort-functional">
                                 <a href="">По функционалу</a>
                             </li>
-                            <li>
+                            <li class="sort-up-dir">
                                 <button class="sort-up-dir current" type="button">
-                                    <img src="img/icon-up-dir.svg" alt="Выход" width="11" height="10">
                                 </button>
+                            </li>
+                            <li class="sort-down-dir">
                                 <button class="sort-down-dir" type="button">
-                                    <img src="img/icon-down-dir.svg" alt="Выход" width="11" height="10">
                                 </button>
                             </li>
                         </ul>
@@ -376,6 +393,7 @@
                                     </a>
                                 </h3>
                                 <p class="catalog-item-price">
+                                    <del></del>
                                     <a class="button" href="#">12500 ₽.</a>
                                 </p>
                             </li>
@@ -437,6 +455,7 @@
                                     </a>
                                 </h3>
                                 <p class="catalog-item-price">
+                                    <del></del>
                                     <a class="button" href="#">12500 ₽.</a>
                                 </p>
                             </li>
