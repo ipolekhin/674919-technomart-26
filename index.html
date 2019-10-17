@@ -19,7 +19,7 @@
                         <input class="search" type="search" id="search" name="search" placeholder="Поиск:">
                         <label for="search">
                             <svg x="0px" y="0px" width="17px" height="17px" >
-                            <path fill="#fff" d="M17,15.586l-3.542-3.542C14.421,10.782,15,9.21,15,7.5C15,3.358,11.643,0,7.5,0C3.358,0,0,3.358,0,7.5 C0,11.643,3.358,15,7.5,15c1.71,0,3.282-0.579,4.544-1.542L15.586,17L17,15.586z M2,7.5C2,4.467,4.467,2,7.5,2 C10.532,2,13,4.467,13,7.5c0,3.032-2.468,5.5-5.5,5.5C4.467,13,2,10.532,2,7.5z"/>
+                            <path d="M17,15.586l-3.542-3.542C14.421,10.782,15,9.21,15,7.5C15,3.358,11.643,0,7.5,0C3.358,0,0,3.358,0,7.5 C0,11.643,3.358,15,7.5,15c1.71,0,3.282-0.579,4.544-1.542L15.586,17L17,15.586z M2,7.5C2,4.467,4.467,2,7.5,2 C10.532,2,13,4.467,13,7.5c0,3.032-2.468,5.5-5.5,5.5C4.467,13,2,10.532,2,7.5z"/>
                             </svg>
                         </label>
                     </form>
@@ -39,6 +39,7 @@
         <div class="container">
             <section class="header-middle">
                 <p class="header-middle-description">
+<!--                Вопрос !!! Здесь я не нашёл разрешения <br>, Параграфами может разбить? -->
                     Интернет-магазин<br>
                     строительных материалов<br>
                     и инструментов для ремонта
@@ -55,8 +56,8 @@
                     <li class="login-link">
                         <a href="">
                             <svg x="0px" y="0px" width="20px" height="17px" >
-                            <polygon fill="#c5c5c5" points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	"/>
-                            <path fill="#c5c5c5" d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,1.811,19.164,0,16.986,0h-5.027 v1.99h5.027c0.839,0,0.992,0.681,1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z"/>
+                            <polygon points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	"/>
+                            <path d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,1.811,19.164,0,16.986,0h-5.027 v1.99h5.027c0.839,0,0.992,0.681,1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z"/>
                             </svg>
                             Войти
                         </a>
@@ -93,17 +94,14 @@
                     <div class="category-materials">
                         <span class="new">new</span>
                         <h2>Материалы</h2>
-                        <img src="img/icon-1.svg" alt="Материалы" width="44" height="65" />
                         <a class="promo-button button" href="">На любой вкус</a>
                     </div> 
                     <div class="category-tools">
                         <h2>Инструмент</h2>
-                        <img src="img/icon-2.svg" alt="Инструмент" width="75" height="61" />
                         <a class="promo-button button" href="">На все случаи</a>
                     </div> 
                     <div class="category-technic">
                         <h2>Техинка</h2>
-                        <img src="img/icon-3.svg" alt="Техинка" width="78" height="62" />
                         <a class="promo-button button" href="">Для стройки</a>
                     </div> 
                 </div> 
@@ -112,7 +110,8 @@
                         <input class="visually-hidden" type="radio" name="toggle" id="product-1" checked="">
                         <input class="visually-hidden" type="radio" name="toggle" id="product-2">                     
                         <ul class="slider-list">
-                            <li class="slider-item" id="slide1"> 
+                            <li class="slider-item" id="slide1">
+                                <img src="img/slide_drills.jpg" alt="Дрели" width="620" height="266" /> 
                                 <div class="slider-title">
                                     <h3>Дрели</h3>
                                     <p>Соседям на радость!</p>
@@ -120,6 +119,7 @@
                                 <a class="slider-item-button button" href="catalog.html">Открыть каталог</a>
                             </li>
                             <li class="slider-item" id="slide2">
+                                <img src="img/slide_perforators.jpg" alt="Перфораторы" width="620" height="266" />
                                 <div class="slider-title">
                                     <h3>Перфораторы</h3>
                                     <p>Настоящие мужские игрушки</p>
@@ -132,21 +132,19 @@
                             <label for="product-2"><i></i></label>
                         </div>
                         <div class="slider-control">
-                            <button class="prev" type="button">
-                            </button>
-                            <button class="next" type="button">
-                            </button>
+                            <label class="prev" for="product-1">
+                            </label>
+                            <label class="next" for="product-2">
+                            </label>
                         </div>
                     </div> 
                     <div class="right">
                         <div class="category-discount">
                             <h2>Скидки 50%</h2>
-                            <img src="img/icon-4.svg" alt="Скидки" width="59" height="72" />
                             <a class="promo-button button" href="">На 350 товаров</a>
                         </div> 
                         <div class="page-delivery">
                             <h2>Доставка</h2>
-                            <img src="img/icon-5.svg" alt="Доставка" width="78" height="63" />
                             <a class="promo-button button" href="">Бесплатно</a>
                         </div>
                     </div>
@@ -304,25 +302,37 @@
         <section class="company-services">
             <div class="container">
                 <h2>Сервисы</h2>
-                <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
+                <p>Хороший интернет-магазин отличается от плохого не только ценами!
                 Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
-                <div class="index-columns">  
+                <div class="index-columns">
+                    <input class="visually-hidden" type="radio" name="tab-list" id="tab-delivery" checked="">
+                    <input class="visually-hidden" type="radio" name="tab-list" id="tab-guarantee"> 
+                    <input class="visually-hidden" type="radio" name="tab-list" id="tab-credit">                      
                     <ul class="tab-list">
                         <li class="tab-item">
-                            <button class="tab current" type="button">Доставка</button>
+                            <label for="tab-delivery">
+                                Доставка
+<!--                                <button class="tab current" type="button">Доставка</button>-->
+                            </label>
                         </li>
                         <li class="tab-item">
-                            <button class="tab" type="button">Гарантия</button>
+                            <label for="tab-guarantee">      
+                                Гарантия                      
+<!--                                <button class="tab" type="button">Гарантия</button>-->
+                            </label>
                         </li>
                         <li class="tab-item">
-                            <button class="tab" type="button">Кредит</button>
+                            <label for="tab-credit">
+                                Кредит
+<!--                                <button class="tab" type="button">Кредит</button>-->
+                            </label>
                         </li>
                     </ul>
                     <div class="tab-view">
                         <div class="tab-view-delivery current">
                             <h3>Доставка</h3>
                             <p>Мы с удовольствием доставим ваш товар прямо<br>
-                            к вашему подъезду совершенно бесплатно!<br>
+                            к вашему подъезду совершенно бесплатно!
                             Ведь мы неплохо заработаем,<br>
                             поднимая его на ваш этаж!</p>
                             <img src="img/tab_delivery.png" alt="Доставка" width="468" height="261" />
@@ -330,8 +340,8 @@
                         <div class="tab-view-guarantee">
                             <h3>Гарантия</h3>
                             <p>Если купленный у нас товар поломается или заискрит, <br>
-                            а также в случае пожара, спровоцированного его возгоранием, <br> 
-                            вы всегда можете быть уверены в нашей гарантии. Мы обменяем <br>
+                            а также в случае пожара, спровоцированного его возгоранием,
+                            вы всегда можете быть уверены в нашей гарантии. Мы обменяем
                             сгоревший товар на новый. <br>
                             Дом уж восстановите как-нибудь сами.</p>
                             <img src="img/tab_guarantee.png" alt="Доставка" width="389" height="283" />
@@ -371,6 +381,41 @@
                 <a class="button write-us" href="#">
                     Заблудились? НапиШИТЕ НАМ!
                 </a>
+            </section>
+            
+            <section class="modal modal-map show">
+                <h2 class="visually-hidden">Адрес проезда</h2>
+                <img src="img/map_full.png" alt="Большая Конюшенная ул., 19" width="940" height="446">
+                <button class="modal-close" type="button">
+                    <span class="visually-hidden">Закрыть</span>
+                </button>
+            </section>
+                            
+            <section class="modal modal-write-us show">
+                <h2 class="visually-hidden">Напишите нам</h2>
+                <form action="https://echo.htmlacademy.ru" method="post" class="write-us-form">
+                    <div class="input-text">
+                        <div class="half-width">
+                            <label for="name-field">Ваше имя:</label>
+                            <input type="text" name="name" id="name-field" placeholder="Имя Фамилия">
+                        </div>
+                        <div class="half-width">
+                            <label for="email-field">Ваш e-mail:</label>
+                            <input type="email" name="email" id="email-field" placeholder="email@example.com">
+                        </div>
+                        <div class="textarea">
+                            <label for="comment-field">Текст письма:</label>
+                            <textarea name="field" id="comment-field" placeholder="В свободной форме"></textarea>
+                        </div>
+                    </div>
+                    <div class="button-submit">
+                        <input class="button write-us-button" type="submit" value="Отправить">
+                    </div>
+
+                </form>
+                <button class="modal-close">
+                    <span class="visually-hidden">Закрыть</span>
+                </button>
             </section>
         </div>
     </main>
@@ -449,41 +494,6 @@
         </div>
         <button class="modal-close" type="button">
             <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
-        </button>
-    </section>
-    
-    <section class="modal modal-write-us">
-        <h2 class="visually-hidden">Напишите нам</h2>
-        <form action="https://echo.htmlacademy.ru" method="post" class="write-us-form">
-            <div class="input-text">
-                <div class="half-width">
-                    <label for="name-field">Ваше имя:</label>
-                    <input type="text" name="name" id="name-field" placeholder="Имя Фамилия">
-                </div>
-                <div class="half-width">
-                    <label for="email-field">Ваш e-mail:</label>
-                    <input type="email" name="email" id="email-field" placeholder="email@example.com">
-                </div>
-                <div class="textarea">
-                    <label for="comment-field">Текст письма:</label>
-                    <textarea name="field" id="comment-field" cols="30" rows="10" placeholder="В свободной форме"></textarea>
-                </div>
-            </div>
-            <div class="button-submit">
-                <input class="button write-us-button" type="submit" value="Отправить">
-            </div>
-            
-        </form>
-        <button class="modal-close">
-            <span class="visually-hidden">Закрыть</span>
-        </button>
-    </section>
-    
-    <section class="modal modal-map">
-        <h2 class="visually-hidden">Адрес проезда</h2>
-        <img src="img/map_full.png" alt="Большая Конюшенная ул., 19" width="940" height="446">
-        <button class="modal-close" type="button">
-            <span class="visually-hidden">Закрыть</span>
         </button>
     </section>
   </body>
