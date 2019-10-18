@@ -7,6 +7,7 @@ html {
 
 body {
     padding: 0;
+    min-width: 960px;
     font-family: 'PT Sans', Arial, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -50,8 +51,10 @@ a {
 }
 
 .container {
-    width: 940px;
+    width: 960px;
     margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .visually-hidden {
@@ -244,8 +247,15 @@ a {
     margin-top: 46px;    
     margin-bottom: 39px;
 }
+
 .header-middle .header-middle-description {   
-    margin: 3px 72px 0 52px;    
+    margin: 3px 67px 0 52px;    
+}
+
+.header-middle .header-middle-description p {   
+    margin: 0;
+    padding: 0;
+    width: 200px;
     font-size: 16px;
     font-style: italic;    
     line-height: 23px;
@@ -258,7 +268,7 @@ a {
 
 .header-middle .contacts-phone {  
     position: relative;
-    padding: 10px 0 6px 70px;
+    padding: 10px 0 6px 72px;
     width: 270px;
     border: 3px solid #fff;
 }
@@ -1235,8 +1245,22 @@ form .price-range {
     display: flex;
     flex-grow: 1;
     margin: 0;
-    padding-left: 122px;
+    padding: 0;
     list-style: none;
+}
+
+.sorts .catalog-sort.one {
+    padding-left: 122px;
+}
+
+.sorts .catalog-sort.dir {
+    margin-top: 5px;
+    margin-left: 23px;
+    padding: 0;
+}
+
+.sorts .catalog-sort li:last-child {
+    margin-right: 0;
 }
 
 .catalog-sort a {
@@ -1257,19 +1281,15 @@ form .price-range {
     margin-right: 64px;
 }
 
-.catalog-sort .sort-functional {
-    margin-right: 42px;
+.catalog-sort .sort-dir {
+    position: relative;
+    width: 24px;
+    height: 24px;
 }
 
 .catalog-sort .sort-up-dir {
-    position: relative;
-    margin-right: 16px;
-    width: 16px;
-}
-
-.catalog-sort .sort-down-dir {
-    position: relative;
-    width: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .catalog-sort .sort-up-dir a,
@@ -1349,6 +1369,7 @@ form .price-range {
     text-align: center;
     background-color: #fff;
     border: 1px solid #e5e5e5; 
+    overflow: hidden;
 }
 
 .catalog-item:nth-child(3n) {
@@ -1358,14 +1379,13 @@ form .price-range {
 .catalog-item:hover {
     border: 1px solid #fff;
     box-shadow: 10px 0 25px rgba(41, 52, 73, 0.5);
-    cursor: pointer;
 }
 
 .catalog-item-new {
     position: absolute;    
     padding: 2px 4px;
     top: 5px;
-    right: 3px;
+    right: 4px;
     color: #fff;
     background-color: #ee3643;
     transform: rotate(45deg);
@@ -1374,20 +1394,30 @@ form .price-range {
 
 .catalog-item-new::before {
     content: '';
+/*
     border-top: 28px solid transparent;
     border-right: 28px solid #ee3643;
+*/
     position: absolute;
-    right: 30px;
-    top: 0px;
+    right: 10px;
+    top: 8px;
+    border: 20px solid transparent;
+    border-left-color: #ee3643;
+    transform: rotate(45deg);
 }
 
 .catalog-item-new::after {
     content: '';
+/*
     border-top: 28px solid transparent;
     border-left: 28px solid #ee3643;
+*/
     position: absolute;
-    right: -27px;
-    top: 0px;
+    left: 10px;
+    top: 8px;
+    border: 20px solid transparent;
+    border-left-color: #ee3643;
+    transform: rotate(135deg);
 }
 
 .catalog-item .action {
@@ -1494,7 +1524,8 @@ form .price-range {
     width: 80px;
     margin: 7px auto;
     margin-bottom: 20px;
-    padding: 11px 30px;
+    padding: 12px 0 10px 4px;
+    font-family: 'PT Sans', Arial, sans-serif;
     color: #fff;
     background-color: #ee3643;
 }
@@ -1627,8 +1658,17 @@ form .price-range {
     padding: 0;
 }
 
+.catalog-description p:first-of-type {
+    letter-spacing: 0.07px;
+}
+
+.catalog-description p:last-of-type {
+    letter-spacing: 0.17px;
+}
+
 .catalog-description h2{
     margin-bottom: 26px;
+    letter-spacing: 0.17px;
 }
 
 .pagination {
@@ -1638,14 +1678,21 @@ form .price-range {
     list-style: none;
 }
 
+.pagination li {
+    margin-right: 9px;   
+}
+
 .pagination li a {
-    margin-right: 10px;
     padding: 10px 15px;
     line-height: 18px;
     text-transform: uppercase;
     color: #000;
     border: 1px solid #e5e5e5;
     border-radius: 3px;    
+}
+
+.pagination li:last-child a {
+    padding: 10px 31px;  
 }
 
 .pagination li a:hover {
@@ -1782,11 +1829,16 @@ footer .footer-bottom ul {
 footer .footer-social a {
     display: flex;
     justify-content: center; 
+    align-items: center;
     margin-right: 3px;
     width: 42px;
     height: 42px;
     background-color: #212a3a;
     border-radius: 50%;
+}
+
+footer .footer-social img {
+    height: 42px;
 }
 
 footer .footer-social a:hover,
@@ -1852,7 +1904,7 @@ footer .footer-bottom a:focus {
 
 .modal-write-us {
     position: absolute;
-    top: 201px;
+    top: 30%;
     left: 50%;
     margin-left: -310px; 
     padding-top: 45px; 
@@ -1860,6 +1912,7 @@ footer .footer-bottom a:focus {
     border-top: 7px solid #ee3643;
     background-color: #fff;
     box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+    z-index: 102;
 }
 
 .modal-write-us .input-text {
@@ -1906,6 +1959,7 @@ footer .footer-bottom a:focus {
 .modal-write-us textarea {
     padding-top: 9px;
     height: 113px;
+    resize: none;
 }
 
 .modal-write-us .button-submit {
@@ -1922,7 +1976,10 @@ footer .footer-bottom a:focus {
 
 .modal-map {
     position: absolute;
-    top: 29px;
+    top: 20%;
+    left: 50%;
+    margin-left: -470px;
+    z-index: 101;
 }
 
 .modal-map img {
@@ -1943,7 +2000,7 @@ footer .footer-bottom a:focus {
 }
 .modal-cart {
     position: absolute;
-    top: -77px;
+    top: 30%;
     left: 50%;
     margin-left: -310px;   
     padding-top: 35px; 
@@ -1951,6 +2008,7 @@ footer .footer-bottom a:focus {
     border-top: 7px solid #ee3643;
     background-color: #fff;
     box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
+    z-index: 100;
 }
 
 .modal-cart p {
@@ -1993,4 +2051,10 @@ footer .footer-bottom a:focus {
     color: #000;
     background-color: #fff;
     
+}
+
+.modal-cart-continue:hover,
+.modal-cart-continue:active,
+.modal-cart-continue:focus {
+    color: #fff;
 }
