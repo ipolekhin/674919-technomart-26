@@ -2012,11 +2012,28 @@ footer .footer-bottom a:focus {
 }
 
 .modal-map {
-    position: absolute;
-    top: 20%;
+    position: fixed;
+    top: 11%;
     left: 50%;
     margin-left: -470px;
     z-index: 101;
+}
+
+.modal-map iframe {
+  position: relative;
+  z-index: 2;
+}
+
+.modal-map a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+}
+
+.modal-map button {
+  z-index: 3;
 }
 
 .modal-map img {
