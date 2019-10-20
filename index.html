@@ -160,7 +160,7 @@
                 <ul class="catalog-list">
                     <li class="catalog-item">
                         <div class="action">
-                            <a class="button" href="#">
+                            <a class="button addtocart" href="#">
                                 Купить
                             </a>
                             <a class="button" href="#">В закладки</a>
@@ -182,7 +182,7 @@
                     </li>
                     <li class="catalog-item">
                         <div class="action">
-                            <a class="button" href="#">
+                            <a class="button addtocart" href="#">
                                 Купить
                             </a>
                             <a class="button" href="#">В закладки</a>
@@ -204,7 +204,7 @@
                     </li>
                     <li class="catalog-item">
                         <div class="action">
-                            <a class="button" href="#">
+                            <a class="button addtocart" href="#">
                                 Купить
                             </a>
                             <a class="button" href="#">В закладки</a>
@@ -227,7 +227,7 @@
                     <li class="catalog-item">
                         <span class="catalog-item-new">new</span>
                         <div class="action">
-                            <a class="button" href="#">
+                            <a class="button addtocart" href="#">
                                 Купить
                             </a>
                             <a class="button" href="#">В закладки</a>
@@ -488,21 +488,21 @@
     </section>
 
     <section class="modal modal-cart">
-        <span>
-            <img src="img/form-1.svg" alt="ok" width="66" height="66">Товар добавлен в корзину!
-        </span>
-        <div>
-            <a href="#">Оформить заказ</a>
-            <a href="#">Продолжить покупки</a>
-        </div>
-        <button class="modal-close" type="button">
-            <img src="img/form-2.svg" alt="Закрыть" width="21" height="21">
-        </button>
+      <p>
+        Товар добавлен в корзину!
+      </p>
+      <div>
+        <a class="button modal-cart-order" href="#">Оформить заказ</a>
+        <a class="button modal-cart-continue" href="#">Продолжить покупки</a>
+      </div>
+      <button class="modal-close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
     </section>
     <script>
       var writeus = document.querySelector(".write-us");
       var writeuspopup = document.querySelector(".modal-write-us");
-      var close = writeuspopup.querySelector(".modal-close");
+      var closewriteuspopup = writeuspopup.querySelector(".modal-close");
       var namefiled = writeuspopup.querySelector("[name = 'name']");
       var emailfield = writeuspopup.querySelector("[name = 'email']");
       var commentfield = writeuspopup.querySelector("[name = 'comment']");
@@ -531,7 +531,7 @@
           }
       });
 
-      close.addEventListener("click", function (e) {
+      closewriteuspopup.addEventListener("click", function (e) {
           e.preventDefault();
           writeuspopup.classList.remove("show");
           writeuspopup.classList.remove("error");
@@ -552,15 +552,42 @@
           }
       });
 
-      window.addEventListener("keydown", function (e) {
-         if (e.keyCode === 27) {
-             e.preventDefault();
-             if (writeuspopup.classList.contains("show")) {
-                 writeuspopup.classList.remove("show");
-                 writeuspopup.classList.remove("error");
-             }
-         }
+      var addtocart = document.querySelectorAll('.addtocart');
+      var cartpopup = document.querySelector('.modal-cart');
+      var closecartpopup = cartpopup.querySelector(".modal-close");
+      var modalcartcontinue = cartpopup.querySelector(".modal-cart-continue");
+
+
+      for (i = 0; i < addtocart.length; i++) {
+          addtocart[i].addEventListener("click", function (e) {
+              e.preventDefault();
+              cartpopup.classList.add("show");
+          });
+      }
+
+      closecartpopup.addEventListener("click", function (e) {
+          e.preventDefault();
+          cartpopup.classList.remove("show");
       });
+
+      modalcartcontinue.addEventListener("click", function (e) {
+          e.preventDefault();
+          cartpopup.classList.remove("show");
+      });
+
+      window.addEventListener("keydown", function (e) {
+          if (e.keyCode === 27) {
+              e.preventDefault();
+              if (writeuspopup.classList.contains("show")) {
+                  writeuspopup.classList.remove("show");
+                  writeuspopup.classList.remove("error");
+              }
+              if (cartpopup.classList.contains("show")) {
+                  cartpopup.classList.remove("show");
+              }
+          }
+      });
+
     </script>
   </body>
 </html>

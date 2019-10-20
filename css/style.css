@@ -1940,8 +1940,8 @@ footer .footer-bottom a:focus {
 }
 
 .modal-write-us {
-    position: absolute;
-    top: 30%;
+    position: fixed;
+    top: 20%;
     left: 50%;
     margin-left: -310px;
     padding-top: 45px;
@@ -2025,18 +2025,7 @@ footer .footer-bottom a:focus {
 }
 
 .modal-cart {
-    position: absolute;
-    top: -77px;
-    left: 50%;
-    margin-left: -310px;
-    padding-top: 48px;
-    width: 620px;
-    border-top: 7px solid #ee3643;
-    background-color: #fff;
-    box-shadow: 0px 20px 40px 0 rgba(0, 0, 0, 0.75);
-}
-.modal-cart {
-    position: absolute;
+    position: fixed;
     top: 30%;
     left: 50%;
     margin-left: -310px;
