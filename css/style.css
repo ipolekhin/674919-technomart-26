@@ -2242,6 +2242,8 @@ footer ul {
 
 .modal-map iframe {
   position: relative;
+  border: none;
+  border-radius: 3px;
   z-index: 2;
 }
 
