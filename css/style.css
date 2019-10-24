@@ -185,15 +185,15 @@ a {
     box-shadow: 0 5px 0 0 #b52933;
 }
 
-.header-top .logo:hover {
+.header-top .logo[href]:hover {
     background-color: #ca2c37;
     -webkit-box-shadow: 0 5px 0 0 #9a212a;
     -moz-box-shadow: 0 5px 0 0 #9a212a;
     box-shadow: 0 5px 0 0 #9a212a;
 }
 
-.header-top .logo:active,
-.header-top .logo:focus {
+.header-top .logo[href]:active,
+.header-top .logo[href]:focus {
     background-color: #ba2732;
     -webkit-box-shadow: 0 5px 0 0 #8e1e26;
     -moz-box-shadow: 0 5px 0 0 #8e1e26;
@@ -467,14 +467,20 @@ a {
     padding: 12px 10px;
 }
 
-.user-navigation a polygon,
-.user-navigation a path {
+.user-navigation-svg polygon,
+.user-navigation-svg path {
     fill: #c5c5c5;
 }
 
-.user-navigation a:hover polygon,
-.user-navigation a:hover path {
+.user-navigation-svg:hover polygon,
+.user-navigation-svg:hover path {
     fill: #32425c;
+}
+.user-navigation-svg:active polygon,
+.user-navigation-svg:active path,
+.user-navigation-svg:focus polygon,
+.user-navigation-svg:focus path {
+  fill: #c5c5c5;
 }
 
 .user-information {
@@ -502,8 +508,7 @@ a {
 .user-information a:active,
 .user-navigation a:focus,
 .user-information a:focus {
-    color: #000;
-    opacity: 0.3;
+    color: rgba(0, 0, 0, 0.3);
 }
 
 .user-information::before {
@@ -522,10 +527,9 @@ a {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-    -moz-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0 18px;
     list-style: none;
@@ -759,7 +763,7 @@ a {
     z-index: 100;
 }
 
-.slider-indicators i {
+.slider-indicators label {
     display: inline-block;
     vertical-align: top;
     position: relative;
@@ -770,7 +774,7 @@ a {
     cursor: pointer;
 }
 
-.slider-indicators i::after {
+.slider-indicators label::after {
     content: '';
     position: absolute;
     top: 5px;
@@ -782,9 +786,9 @@ a {
     z-index: 1;
 }
 
-#product-1:checked ~ .slider-indicators label[for="product-1"] i::before,
-#product-2:checked ~ .slider-indicators label[for="product-2"] i::before,
-#product-3:checked ~ .slider-indicators label[for="product-3"] i::before {
+#product-1:checked ~ .slider-indicators label[for="product-1"]::before,
+#product-2:checked ~ .slider-indicators label[for="product-2"]::before,
+#product-3:checked ~ .slider-indicators label[for="product-3"]::before {
     content: '';
     position: absolute;
     left: 50%;
@@ -1319,63 +1323,67 @@ form .price-range {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
-.filter-input-checkbox + label svg {
-  content: "";
-  position: absolute;
-  left: -35px;
-  top: -2px;
-  width: 24px;
-  height: 24px;
+.filter-input-checkbox + label::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -2px;
+    width: 23px;
+    height: 23px;
+    background-image: url('../img/checkbox-off.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
-.filter-input-checkbox + label svg *:not(:last-child),
-.filter-input-checkbox:checked + label svg *:last-child {
-    opacity: 0;
+.filter-input-checkbox:focus + label:before {
+  outline: 2px solid #a6c7ff;
 }
 
-.filter-input-checkbox:checked + label svg *:not(:last-child) {
-    opacity: 1;
+.filter-input-checkbox + label:hover:before {
+    background-image: url('../img/checkbox-off-hover.svg');
 }
 
-.filter-input-radio + label svg {
-  content: "";
-  position: absolute;
-  left: -35px;
-  top: -2px;
-  width: 25px;
-  height: 25px;
+.filter-input-checkbox:checked + label::before {
+    background-image: url('../img/checkbox-on.svg');
 }
 
-.filter-input-radio + label svg *:last-child {
-    opacity: 0;
+.filter-input-checkbox:checked + label:hover:before {
+    background-image: url('../img/checkbox-on-hover.svg');
 }
 
-.filter-input-radio:checked + label svg *:last-child {
-    opacity: 1;
+.filter-input-radio + label::before {
+    content: "";
+    position: absolute;
+    left: -35px;
+    top: -2px;
+    width: 25px;
+    height: 25px;
+    background-image: url('../img/radio-off.svg');
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
-.filter-option polygon,
-.filter-option path,
-.filter-option circle  {
-    fill: #c5c5c5;
+.filter-input-radio:focus + label:before {
+  outline: 2px solid #a6c7ff;
 }
 
-.filter-option:hover polygon,
-.filter-option:hover path,
-.filter-option:hover circle  {
-    fill: #b5b5b5;
+.filter-input-radio + label:hover:before {
+  background-image: url('../img/radio-off-hover.svg');
 }
 
-.filter-option input:disabled + label svg *:not(:last-child) {
-    opacity: 0;
+.filter-input-radio:checked + label::before {
+  background-image: url('../img/radio-on.svg');
 }
 
-.filter-option input:disabled + label polygon,
-.filter-option input:disabled + label path,
-.filter-option input:disabled + label circle {
-    opacity: 0.3;
+.filter-input-radio:checked + label:hover:before {
+  background-image: url('../img/radio-on-hover.svg');
+}
+
+.filter-option input:disabled + label {
+  opacity: 0.3;
 }
 
 .filters input[type = 'submit'] {
@@ -1403,6 +1411,10 @@ form .price-range {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
     -moz-box-align: center;
     -ms-flex-align: center;
@@ -1425,22 +1437,20 @@ form .price-range {
     display: -moz-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-flex: 1;
-    -moz-box-flex: 1;
-    -ms-flex-positive: 1;
-    flex-grow: 1;
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 .sorts .catalog-sort.one {
-    padding-left: 122px;
+    margin-left: 90px;
+    justify-content: space-around;
+    flex-grow: 1;
+    flex-wrap: wrap;
 }
 
 .sorts .catalog-sort.dir {
-    margin-top: 5px;
-    margin-left: 23px;
+    margin: 5px 10px 0 0;
     padding: 0;
 }
 
@@ -1456,14 +1466,6 @@ form .price-range {
 .catalog-sort a:hover {
     color: rgba(0, 0, 0, 1);
     border-bottom: 1px solid #ee3643;
-}
-
-.catalog-sort .sort-price {
-    margin-right: 71px;
-}
-
-.catalog-sort .sort-type {
-    margin-right: 64px;
 }
 
 .catalog-sort .sort-dir {
@@ -1512,21 +1514,17 @@ form .price-range {
     cursor: pointer;
 }
 
-.sort-dir a.current {
-    opacity: 1;
-}
-
+.sort-dir a.current,
 .catalog-sort a:hover {
     opacity: 1;
 }
-
-.catalog-sort li.current a {
-    color: rgba(255, 0, 0, 1);
-    border-bottom: none;
+.sort-dir a:hover {
+  border-bottom: none;
 }
 
-.catalog-sort li.current button {
-    opacity: 1;
+.sort-item.current a {
+    color: rgba(255, 0, 0, 1);
+    border-bottom: none;
 }
 
 .catalog-list {
@@ -1540,6 +1538,14 @@ form .price-range {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     list-style: none;
+}
+
+.catalog-item h3 {
+  max-height: 40px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .catalog-item h3,
@@ -1691,7 +1697,6 @@ form .price-range {
     display: block;
     min-height: 40px;
     padding: 0 25px;
-    margin-bottom: 12px;
     font-size: 18px;
     font-weight: 700;
     line-height: 20px;
@@ -1709,43 +1714,34 @@ form .price-range {
     display: block;
     min-height: 20px;
     margin-top: 12px;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
     color: #999;
 }
 
-.catalog-item-price a {
-    display: block;
-    position: relative;
-    width: 80px;
-    margin: 7px auto;
-    margin-bottom: 20px;
-    padding: 12px 0 10px 4px;
-    font-family: 'PT Sans', Arial, sans-serif;
-    color: #fff;
-    background-color: #ee3643;
+.catalog-item-price span {
+  display: block;
+  position: relative;
+  margin: 8px auto;
+  margin-bottom: 20px;
+  padding: 6px 0 8px 4px;
+  width: 135px;
+  font-family: 'PT Sans', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #ee3643;
+  border-radius: 3px;
 }
 
-.catalog-item-price a::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    right: -27px;
-    width: 0;
-    height: 0;
-    border: 20px solid white;
-    border-left-color: #ee3643;
-
-}
-
-.catalog-item-price a:hover:after {
-    border-left-color: #ca2c37;
-
-}
-
-.catalog-item-price a:focus:after,
-.catalog-item-price a:active:after {
-    border-left-color: #ba2732;
-
+.catalog-item-price span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: -27px;
+  width: 0;
+  height: 0;
+  border: 19px solid white;
+  border-left-color: #ee3643;
 }
 
 .index-columns {

@@ -6,7 +6,7 @@
     <title>HTML Academy: Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700&#448;PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
   </head>
   <body>
     <header class="main-header">
@@ -55,7 +55,7 @@
                 </div>
                 <ul class="user-navigation">
                     <li class="login-link">
-                        <a href="#">
+                        <a href="#" class="user-navigation-svg">
                             <svg x="0px" y="0px" width="20px" height="17px" >
                             <polygon points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	"/>
                             <path d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,1.811,19.164,0,16.986,0h-5.027 v1.99h5.027c0.839,0,0.992,0.681,1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z"/>
@@ -129,13 +129,13 @@
                             </li>
                         </ul>
                         <div class="slider-indicators">
-                            <label for="product-1"><i></i></label>
-                            <label for="product-2"><i></i></label>
+                            <label for="product-1" aria-label="Включить первый слайд"></label>
+                            <label for="product-2" aria-label="Включить второй слайд"></label>
                         </div>
                         <div class="slider-control">
-                            <label class="prev" for="product-1">
+                            <label class="prev" for="product-1" aria-label="Листать слайд назад">
                             </label>
-                            <label class="next" for="product-2">
+                            <label class="next" for="product-2" aria-label="Листать слайд вперед">
                             </label>
                         </div>
                     </div>
@@ -177,7 +177,7 @@
 
                         <p class="catalog-item-price">
                             <del>32500 ₽.</del>
-                            <a class="button" href="#">25500 ₽.</a>
+                            <span>25500 ₽.</span>
                         </p>
                     </li>
                     <li class="catalog-item">
@@ -199,7 +199,7 @@
 
                         <p class="catalog-item-price">
                             <del>22500 ₽.</del>
-                            <a class="button" href="#">15500 ₽.</a>
+                            <span>15500 ₽.</span>
                         </p>
                     </li>
                     <li class="catalog-item">
@@ -221,7 +221,7 @@
 
                         <p class="catalog-item-price">
                             <del>30500 ₽.</del>
-                            <a class="button" href="#">25500 ₽.</a>
+                            <span>25500 ₽.</span>
                         </p>
                     </li>
                     <li class="catalog-item">
@@ -244,7 +244,7 @@
 
                         <p class="catalog-item-price">
                             <del></del>
-                            <a class="button" href="#">12500 ₽.</a>
+                            <span>12500 ₽.</span>
                         </p>
                     </li>
                 </ul>
@@ -376,7 +376,7 @@
                 <h2>Контакты</h2>
                 <p>Вы можете забрать товар сами,
                 заехав в наш офис:</p>
-                <a href="./img/map-full.png" class="big-map">
+                <a href="https://yandex.ru/maps/-/CGD5YTK2" class="big-map">
                     <img src="img/map.png" alt="Карта" width="300" height="158" />
                 </a>
                 <a class="button write-us" href="#">
@@ -423,17 +423,17 @@
                 </p>
                 <ul class="footer-social">
                     <li>
-                        <a class="social-button" href="#">
+                        <a class="social-button" href="#" aria-label="Социальная есть Вконтакте">
                             <img src="img/vk-icon.svg" alt="Вконтакте" width="26" height="15">
                         </a>
                     </li>
                     <li>
-                        <a class="social-button" href="#">
+                        <a class="social-button" href="#" aria-label="Социальная есть Facebook">
                             <img src="img/fb-icon.svg" alt="Facebook" width="12" height="22">
                         </a>
                     </li>
                     <li>
-                        <a class="social-button" href="#">
+                        <a class="social-button" href="#" aria-label="Социальная есть Instagram">
                             <img src="img/insta-icon.svg" alt="Instagram" width="21" height="21">
                         </a>
                     </li>
@@ -489,6 +489,7 @@
     </section>
 
     <section class="modal modal-cart">
+      <h2 class="visually-hidden">Товар добавлен в корзину</h2>
       <p>
         Товар добавлен в корзину!
       </p>
@@ -500,112 +501,7 @@
         <span class="visually-hidden">Закрыть</span>
       </button>
     </section>
-    <script>
-      var writeus = document.querySelector(".write-us");
-      var writeuspopup = document.querySelector(".modal-write-us");
-      var closewriteuspopup = writeuspopup.querySelector(".modal-close");
-      var namefiled = writeuspopup.querySelector("[name = 'name']");
-      var emailfield = writeuspopup.querySelector("[name = 'email']");
-      var commentfield = writeuspopup.querySelector("[name = 'comment']");
-      var writeusform = writeuspopup.querySelector("form");
 
-      var isStorageSupport = true;
-      var storagename = "";
-      var storageemail = "";
-
-      try {
-          storagename = localStorage.getItem("name");
-          storageemail = localStorage.getItem("email");
-      } catch (err) {
-          isStorageSupport = false;
-      }
-
-      writeus.addEventListener("click", function (e) {
-          e.preventDefault();
-          writeuspopup.classList.add("show");
-          if (storagename && storageemail) {
-              namefiled.value = storagename;
-              emailfield.value = storageemail;
-              commentfield.focus();
-          } else {
-              namefiled.focus();
-          }
-      });
-
-      closewriteuspopup.addEventListener("click", function (e) {
-          e.preventDefault();
-          writeuspopup.classList.remove("show");
-          writeuspopup.classList.remove("error");
-      });
-
-      writeusform.addEventListener("submit", function (e) {
-          if (!namefiled.value || !emailfield.value || !commentfield.value) {
-              e.preventDefault();
-              console.log("Нужно заполнить все поля!");
-              writeuspopup.classList.remove("error");
-              writeuspopup.offsetWidth = writeuspopup.offsetWidth;
-              writeuspopup.classList.add("error");
-          } else {
-              if (isStorageSupport) {
-                  localStorage.setItem("name", namefiled.value);
-                  localStorage.setItem("email", emailfield.value);
-              }
-          }
-      });
-
-      var addtocart = document.querySelectorAll('.addtocart');
-      var cartpopup = document.querySelector('.modal-cart');
-      var closecartpopup = cartpopup.querySelector(".modal-close");
-      var modalcartcontinue = cartpopup.querySelector(".modal-cart-continue");
-
-
-      for (i = 0; i < addtocart.length; i++) {
-          addtocart[i].addEventListener("click", function (e) {
-              e.preventDefault();
-              cartpopup.classList.add("show");
-          });
-      }
-
-      closecartpopup.addEventListener("click", function (e) {
-          e.preventDefault();
-          cartpopup.classList.remove("show");
-      });
-
-      modalcartcontinue.addEventListener("click", function (e) {
-          e.preventDefault();
-          cartpopup.classList.remove("show");
-      });
-
-      var bigmaplink = document.querySelector('.big-map');
-      var bigmappopup = document.querySelector('.modal-map');
-      var closebigmappopup = bigmappopup.querySelector(".modal-close");
-
-      bigmaplink.addEventListener("click", function (e) {
-          e.preventDefault();
-          bigmappopup.classList.add("show");
-      });
-
-      closebigmappopup.addEventListener("click", function (e) {
-          e.preventDefault();
-          bigmappopup.classList.remove("show");
-      });
-
-      window.addEventListener("keydown", function (e) {
-          if (e.keyCode === 27) {
-              e.preventDefault();
-              if (writeuspopup.classList.contains("show")) {
-                  writeuspopup.classList.remove("show");
-                  writeuspopup.classList.remove("error");
-              }
-              if (cartpopup.classList.contains("show")) {
-                  cartpopup.classList.remove("show");
-              }
-              if (bigmappopup.classList.contains("show")) {
-                  bigmappopup.classList.remove("show");
-              }
-          }
-      });
-
-    </script>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
