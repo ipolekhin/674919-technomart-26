@@ -1,12 +1,11 @@
 var writeus = document.querySelector(".write-us");
-if (writeus !== null) {
+if (writeus) {
     var writeuspopup = document.querySelector(".modal-write-us");
     var closewriteuspopup = document.querySelector(".modal-write-us .modal-close");
     var namefiled = document.querySelector(".modal-write-us [name = 'name']");
     var emailfield = document.querySelector(".modal-write-us [name = 'email']");
     var commentfield = document.querySelector(".modal-write-us [name = 'comment']");
     var writeusform = document.querySelector(".modal-write-us form");
-
     var isStorageSupport = true;
     var storagename = "";
     var storageemail = "";
@@ -19,15 +18,15 @@ if (writeus !== null) {
     }
 
     writeus.addEventListener("click", function (e) {
-      e.preventDefault();
-      writeuspopup.classList.add("show");
-      if (storagename && storageemail) {
-          namefiled.value = storagename;
-          emailfield.value = storageemail;
-          commentfield.focus();
-      } else {
-          namefiled.focus();
-      }
+        e.preventDefault();
+        writeuspopup.classList.add("show");
+        if (storagename && storageemail) {
+            namefiled.value = storagename;
+            emailfield.value = storageemail;
+            commentfield.focus();
+        } else {
+            namefiled.focus();
+        }
     });
 
     closewriteuspopup.addEventListener("click", function (e) {
@@ -51,8 +50,8 @@ if (writeus !== null) {
         }
     });
 
-    var bigmaplink = document.querySelector('.big-map');
-    var bigmappopup = document.querySelector('.modal-map');
+    var bigmaplink = document.querySelector(".big-map");
+    var bigmappopup = document.querySelector(".modal-map");
     var closebigmappopup = bigmappopup.querySelector(".modal-close");
 
     bigmaplink.addEventListener("click", function (e) {
@@ -66,11 +65,10 @@ if (writeus !== null) {
     });
 }
 
-var addtocart = document.querySelectorAll('.addtocart');
-var cartpopup = document.querySelector('.modal-cart');
+var addtocart = document.querySelectorAll(".addtocart");
+var cartpopup = document.querySelector(".modal-cart");
 var closecartpopup = cartpopup.querySelector(".modal-close");
 var modalcartcontinue = cartpopup.querySelector(".modal-cart-continue");
-
 
 for (i = 0; i < addtocart.length; i++) {
     addtocart[i].addEventListener("click", function (e) {
